@@ -1,9 +1,13 @@
 import './App.css';
 import MainFull from './PageSources/MainPage/MainFull/MainFull';
+import {Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <div className='bg'>
-      <MainFull />
+      <Routes>
+        <Route path='/' element={<MainFull />}></Route>
+      </Routes>
+      
     </div>
   );
 }
