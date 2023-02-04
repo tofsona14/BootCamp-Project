@@ -1,10 +1,9 @@
 import './App.css';
-import MainHeader from './PageSources/MainPage/MainComponents/mainHeader';
-
+import MainFull from './PageSources/MainPage/MainFull/mainFull';
 function App() {
   return (
     <div className='bg'>
-      <MainHeader />
+      <MainFull />
     </div>
   );
 }
