@@ -1,5 +1,5 @@
 import React from 'react'
-import './mainBody.css'
+import './MainBody.css'
 
 const MainBody = () => {
     return(

@@ -1,7 +1,7 @@
 import React from 'react'
-import './mainFull.css'
-import MainBody from '../MainComponents/mainBody'
-import MainHeader from '../MainComponents/mainHeader'
+import './MainFull.css'
+import MainBody from '../MainComponents/MainBody'
+import MainHeader from '../MainComponents/MainHeader'
 
 const MainFull = () => {
     return(
