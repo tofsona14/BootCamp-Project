@@ -1,16 +1,15 @@
 import React from 'react'
-import './SecondHeader.css'
+import './SecondFirst.css'
 import image from '../../images/s.png'
 
 
-const SecondHeader = () => {
+const SecondFirst = () => {
     return(
         <div className='SecondHeader--Main'>
             <div className='left--arrows'><img className='left--arrow' src={image}></img></div>
-            <div></div>
-            <div></div>
+            
         </div>
     )
 }
 
-export default SecondHeader
+export default SecondFirst
