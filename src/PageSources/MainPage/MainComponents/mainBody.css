@@ -6,12 +6,13 @@
     
 }
 
-.Main--Body, button {
+.Main--Button {
     background-color: black;
     color: white;
     width: 20vw;
     height: 5vh;
     border-radius: 7%;
+    cursor: pointer;
 }
 .link--style{
    font-style: normal;

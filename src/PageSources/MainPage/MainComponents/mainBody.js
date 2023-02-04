@@ -7,8 +7,7 @@ const MainBody = () => {
     
     return(
         <div className='Main--Body'>
-            
-            <button><Link style={{ textDecoration: 'none', color: 'white' }} to='/General-info'> რეზიუმეს დამატება </Link></button>
+            <Link to="/General-Info"><button className='Main--Button'> დაამატეთ რეზიუმე </button></Link>
         </div>
     )
 }
