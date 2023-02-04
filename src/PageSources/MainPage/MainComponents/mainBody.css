@@ -3,10 +3,13 @@
     left: 50%;
     transform: translateX(-50%);
     top: 50%;
+    
 }
 
 .Main--Body, button {
     background-color: black;
     color: white;
-    
+    width: 20vw;
+    height: 5vh;
+    border-radius: 7%;
 }
