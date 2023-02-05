@@ -26,7 +26,10 @@
     border-color: rgb(175, 185, 190);
 }
 .Second--Body--First--First--Input::placeholder {
+    position: absolute;
     font-size: larger;
+    margin-left: 10px;
+    top: 20%;
     
 }
 .Second--Body--First--First-P {
@@ -35,7 +38,7 @@
 .Second--Body--Second--First{
     margin-top: 4vh;
     display: flex;
-    width: 47.5vw;
+    width: 47.25vw;
 }
 .Second--Body--Second--First--Button{
     margin-left: 2vw;
@@ -44,4 +47,22 @@
     color: white;
     border-radius: 10%;
     border: none
+}
+.Second--Body--Third {
+    margin-top: 4.5vh;
+}
+.Second--Body--Third--Second {
+    width: 47.5vw;
+    margin: 0.25vw;
+    border-color: rgb(175, 185, 190);
+}
+.Second--Body--Third--Second::placeholder {
+    position: absolute;
+    margin-left: 10px;
+    top: 0;
+}
+.Second--Body--Third--Second {
+    padding-bottom: 70px;
+    vertical-align: top;
+    margin-top: 1vw;
 }

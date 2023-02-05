@@ -30,8 +30,11 @@ const SecondSecond = () => {
                         <label>პირადი ფოტოს ატვირთვა</label>
                         <button className='Second--Body--Second--First--Button' style={{backgroundColor: '#3399FF'}}>ატვირთვა </button>
                     </div>
-                    <div className='Second--Body--Third--First'>
-                        <label>ჩემს შესახებ(არასავალდებულო)</label>
+                    <div className='Second--Body--Third'>
+                        <div className='Second--Body--Third--First'>
+                            <label>ჩემს შესახებ(არასავალდებულო)</label>
+                        </div>
+                            <input className='Second--Body--Third--Second' placeholder='ზოგადი ინფო შენს შესახებ'></input>
                     </div>
                 </div>
             </div>
