@@ -36,6 +36,19 @@ const SecondSecond = () => {
                         </div>
                             <input className='Second--Body--Third--Second' placeholder='ზოგადი ინფო შენს შესახებ'></input>
                     </div>
+                    <div className='Second--Body--Fourth'>
+                        <label>ელ.ფოსტა</label>
+                        <div ><input className='Second--Body--Fourth--Input' placeholder='Redberry@redberry.ge'></input></div>
+                        <p className="Second--Body--First--First-P" style={{color:"gray"}} >უნდა მთავრდებოდეს @redberry.ge-ით</p>
+                    </div>
+                    <div className='Second--Body--Fifth'>
+                        <label>მობილურის ნომერი</label>
+                        <div ><input className='Second--Body--Fourth--Input' placeholder='+995 551 12 34 56'></input></div>
+                        <p className="Second--Body--First--First-P" style={{color:"gray"}} >უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
+                    </div>
+                    <div className='Second--Body--Sixth'>
+                        <button className='Second--Body--Fifth--Button'>შემდეგი</button>
+                    </div>
                 </div>
             </div>
         </div>

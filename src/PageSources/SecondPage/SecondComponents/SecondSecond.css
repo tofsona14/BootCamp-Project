@@ -38,7 +38,7 @@
 .Second--Body--Second--First{
     margin-top: 4vh;
     display: flex;
-    width: 47.25vw;
+    width: 47.5vw;
 }
 .Second--Body--Second--First--Button{
     margin-left: 2vw;
@@ -52,17 +52,47 @@
     margin-top: 4.5vh;
 }
 .Second--Body--Third--Second {
-    width: 47.5vw;
+    width: 46.5vw;
     margin: 0.25vw;
     border-color: rgb(175, 185, 190);
 }
 .Second--Body--Third--Second::placeholder {
     position: absolute;
-    margin-left: 10px;
+    margin-left: 4px;
     top: 0;
 }
 .Second--Body--Third--Second {
     padding-bottom: 70px;
     vertical-align: top;
     margin-top: 1vw;
+}
+.Second--Body--Fourth--Input {
+    margin: 0.25vw;
+    width: 46.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+}
+.Second--Body--Fourth--Input::placeholder {
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 1.2vh;
+}
+.Second--Body--Fourth {
+    margin-top: 4vh;
+}
+.Second--Body--Fifth--Button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10vw;
+    height: 4vh;
+    color: white;
+    background-color: #5721EC;
+    font-size: 17px;
+    border: none;
+    border-radius: 6%;
+}
+.Second--Body--Sixth {
+    position: relative;
+    height: 10vw;
 }
