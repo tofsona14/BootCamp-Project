@@ -1,6 +1,6 @@
 .Second--Second {
     margin-left: 1vw;
-    width: 45.5vw;
+    width: 47.5vw;
     height: 100vh;
 }
 
@@ -38,7 +38,7 @@
 .Second--Body--Second--First{
     margin-top: 4vh;
     display: flex;
-    width: 45.5vw;
+    width: 47.5vw;
 }
 .Second--Body--Second--First--Button{
     margin-left: 2vw;
@@ -52,7 +52,7 @@
     margin-top: 4.5vh;
 }
 .Second--Body--Third--Second {
-    width: 44.5vw;
+    width: 46.5vw;
     margin: 0.25vw;
     border-color: rgb(175, 185, 190);
 }
@@ -68,7 +68,7 @@
 }
 .Second--Body--Fourth--Input {
     margin: 0.25vw;
-    width: 44.5vw;
+    width: 46.5vw;
     height: 4vh;
     margin-top: 1vh;
 }
@@ -87,7 +87,7 @@
     width: 10vw;
     height: 4vh;
     color: white;
-    background-color: #5721EC;
+    background-color: #6B40E3;
     font-size: 17px;
     border: none;
     border-radius: 6%;
@@ -95,4 +95,7 @@
 .Second--Body--Sixth {
     position: relative;
     height: 10vw;
+}
+body {
+    font-family: "Helvetica Neue";
 }
