@@ -9,7 +9,7 @@ const SecondSecond = () => {
                 <h3 style={{ color:"#2E2E2E"}}>1/3</h3>
             </div>
             <div className='Second--Body'>
-                <div>
+                
                     <div className='Second--Body--First--First'>
                         <div>
                             <label>სახელი</label>
@@ -50,7 +50,7 @@ const SecondSecond = () => {
                         <button className='Second--Body--Fifth--Button'>შემდეგი</button>
                     </div>
                 </div>
-            </div>
+
         </div>
     )
 }
