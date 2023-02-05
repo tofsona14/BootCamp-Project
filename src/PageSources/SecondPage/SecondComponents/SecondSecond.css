@@ -1,6 +1,6 @@
 .Second--Second {
-    margin-left: 4vw;
-    width: 47.5vw;
+    margin-left: 1vw;
+    width: 45.5vw;
     height: 100vh;
 }
 
@@ -38,7 +38,7 @@
 .Second--Body--Second--First{
     margin-top: 4vh;
     display: flex;
-    width: 47.5vw;
+    width: 45.5vw;
 }
 .Second--Body--Second--First--Button{
     margin-left: 2vw;
@@ -52,7 +52,7 @@
     margin-top: 4.5vh;
 }
 .Second--Body--Third--Second {
-    width: 46.5vw;
+    width: 44.5vw;
     margin: 0.25vw;
     border-color: rgb(175, 185, 190);
 }
@@ -68,7 +68,7 @@
 }
 .Second--Body--Fourth--Input {
     margin: 0.25vw;
-    width: 46.5vw;
+    width: 44.5vw;
     height: 4vh;
     margin-top: 1vh;
 }
