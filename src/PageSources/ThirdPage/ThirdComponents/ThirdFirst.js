@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 
 const ThirdFirst = () => {
     return(
-        <div>
-            <Link to='/'><img className='Third--Arrow' src={image}></img></Link>
+        <div className='SecondHeader--Main'>
+            <Link to="/"><div className='left--arrows'><img className='left--arrow' src={image}></img></div></Link>
+            
         </div>
     )
 }

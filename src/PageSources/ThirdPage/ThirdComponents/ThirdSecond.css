@@ -6,7 +6,7 @@
     border-bottom: 1px solid #1A1A1A;
 }
 .Third--Second {
-    margin-left: 2vw;
+    margin-left: 1vw;
     width: 47.5vw;
     height: 100vh;
 }
@@ -57,10 +57,34 @@
 }
 .Third--Body--Button {
     margin-top: 4vh;
-    width: 17vw;
+    width: 17.5vw;
     height: 4.2vh;
     color: white;
     background-color: #62A1EB;
     border: none;
     border-radius: 3%;
+}
+.Third--Body--Fifth {
+    margin-top: 8.9vh;
+    display: flex;
+    justify-content: space-between;
+}
+.Third--Body--Fifth--st--button {
+    width: 6.4vw;
+    font-size: 16px;
+    height: 4vh;
+    background-color: #6B40E3;
+    border: none;
+    border-radius: 3%;
+    color: white;
+    font-family: "Helvetica Neue";
+}
+.Third--Body--Fifth--nd--button {
+    width: 10vw;
+    height: 4vh;
+    color: white;
+    background-color: #6B40E3;
+    font-size: 17px;
+    border: none;
+    border-radius: 6%;
 }

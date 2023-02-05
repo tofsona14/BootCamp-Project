@@ -1,5 +1,6 @@
 import React from 'react'
 import './ThirdSecond.css'
+import { Link } from 'react-router-dom'
 
 const ThirdSecond = () => {
     return(
@@ -11,6 +12,7 @@ const ThirdSecond = () => {
             <div className='Third--Second--Body'>
                 <div className='Third--Second--Body--First'>
                     <label>თანამდებობა</label>
+                    <br></br>
                     <div >
                         <input className='Third--Body--First--Input' placeholder='დეველოპერი, დიზაინერი და ა.შ'></input>
                         <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >მინიმუმ 2 სიმბოლო</p>
@@ -44,7 +46,11 @@ const ThirdSecond = () => {
                         <input style={{fontSize: "15px"}} className='Second--Body--Third--Second' placeholder='როლი თანამდებობაზე და ზოგადი აღწერა'></input>
                 </div>
                 <div className='Third--Body--Fourth'></div>
-                <button className='Third--Body--Button'> მეტი გამოცდილება </button>
+                <button className='Third--Body--Button'> მეტი გამოცდილების დამატება </button>
+                <div className='Third--Body--Fifth'>
+                    <Link to="/Private-Info"><button className='Third--Body--Fifth--st--button'>უკან</button></Link>
+                    <button className='Third--Body--Fifth--nd--button'>შემდეგი</button>
+                </div>
             </div>
         </div>
     )
