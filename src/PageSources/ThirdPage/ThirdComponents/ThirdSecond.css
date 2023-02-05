@@ -10,3 +10,57 @@
     width: 47.5vw;
     height: 100vh;
 }
+.Third--Body--First--Input {
+    margin: 0.25vw;
+    width: 46.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+}
+.Third--Body--First--Input::placeholder {
+    position: absolute;
+    margin-top: 0.4vh;
+    margin-left: 0.85vw;
+    font-size: large;
+    font-family: "Helvetica Neue";
+}
+.Third--Second--Body--First {
+    margin-top: 8.3vh;
+}
+.Third--Body--First--First-P {
+    margin-top: 1px;
+    font-size: 15px;
+}
+.Third--Second--Body--Second {
+    margin-top: 2.5vh;
+}
+.Third--Body--First--First {
+    display: flex;
+    justify-content: space-between;
+}
+.Third--Body--First--First--Input {
+    margin-top: 1vh;
+    margin-left: 0.2vw;
+    width: 21vw;
+    height: 4vh;
+    border-color: rgb(175, 185, 190);
+}
+.Third--Body--First--First--Input::placeholder {
+    position: absolute;
+    font-size: larger;
+    margin-left: 10px;
+    top: 20%;
+    
+}
+.Third--Body--Fourth {
+    margin-top: 5vh;
+    border: 0.5px solid #C1C1C1;
+}
+.Third--Body--Button {
+    margin-top: 4vh;
+    width: 17vw;
+    height: 4.2vh;
+    color: white;
+    background-color: #62A1EB;
+    border: none;
+    border-radius: 3%;
+}

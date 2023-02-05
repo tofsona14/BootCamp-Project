@@ -1,5 +1,6 @@
 import React from 'react'
 import './SecondSecond.css'
+import { Link } from 'react-router-dom'
 
 const SecondSecond = () => {
     return(
@@ -9,7 +10,6 @@ const SecondSecond = () => {
                 <h3 style={{ color:"#2E2E2E"}}>1/3</h3>
             </div>
             <div className='Second--Body'>
-                
                     <div className='Second--Body--First--First'>
                         <div>
                             <label>სახელი</label>
@@ -38,19 +38,19 @@ const SecondSecond = () => {
                     </div>
                     <div className='Second--Body--Fourth'>
                         <label>ელ.ფოსტა</label>
-                        <div ><input className='Second--Body--Fourth--Input' placeholder='Redberry@redberry.ge'></input></div>
-                        <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა მთავრდებოდეს @redberry.ge-ით</p>
-                    </div>
+                        <div >
+                            <input className='Second--Body--Fourth--Input' placeholder='Redberry@redberry.ge'></input></div>
+                            <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა მთავრდებოდეს @redberry.ge-ით</p>
+                        </div>
                     <div className='Second--Body--Fifth'>
                         <label>მობილურის ნომერი</label>
                         <div ><input className='Second--Body--Fourth--Input' placeholder='+995 551 12 34 56'></input></div>
                         <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                     <div className='Second--Body--Sixth'>
-                        <button className='Second--Body--Fifth--Button'>შემდეგი</button>
+                        <Link to="/Experience"><button className='Second--Body--Fifth--Button'>შემდეგი</button></Link>
                     </div>
                 </div>
-
         </div>
     )
 }
