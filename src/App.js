@@ -7,7 +7,7 @@ function App() {
     <div className='bg'>
       <Routes>
         <Route path='/' element={<MainFull />}></Route>
-        <Route path='/General-Info' element={<SecondFull />}></Route>
+        <Route path='/Private-Info' element={<SecondFull />}></Route>
       </Routes>
       
     </div>

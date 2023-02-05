@@ -18,7 +18,7 @@ const SecondSecond = () => {
                             <p className='Second--Body--First--First-P' style={{color:"gray"}}>მინიმუმ 2 ასო, ქართული ასოებით</p>
                             </div>
                         </div>
-                        <div>
+                        <div className='Second--Body--First--Second'>
                             <label>გვარი</label>
                             <div>
                             <input className='Second--Body--First--First--Input' placeholder='მუმლაძე' minLength={2}></input>
@@ -26,8 +26,12 @@ const SecondSecond = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='Second--Body--First--Second'>
-                        
+                    <div className='Second--Body--Second--First'>
+                        <label>პირადი ფოტოს ატვირთვა</label>
+                        <button className='Second--Body--Second--First--Button' style={{backgroundColor: '#3399FF'}}>ატვირთვა </button>
+                    </div>
+                    <div className='Second--Body--Third--First'>
+                        <label>ჩემს შესახებ(არასავალდებულო)</label>
                     </div>
                 </div>
             </div>

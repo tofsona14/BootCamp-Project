@@ -11,6 +11,9 @@
     justify-content: space-between;
     border-bottom: 1px solid rgb(105, 102, 102);
 }
+.Second--Body {
+    margin-top: 4.5vh;
+}
 .Second--Body--First--First {
     display: flex;
     justify-content: space-between;
@@ -28,4 +31,17 @@
 }
 .Second--Body--First--First-P {
     font-size: 12.5px;
+}
+.Second--Body--Second--First{
+    margin-top: 4vh;
+    display: flex;
+    width: 47.5vw;
+}
+.Second--Body--Second--First--Button{
+    margin-left: 2vw;
+    width: 8vw;
+    height: 3vh;
+    color: white;
+    border-radius: 10%;
+    border: none
 }

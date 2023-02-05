@@ -7,7 +7,7 @@ const MainBody = () => {
     
     return(
         <div className='Main--Body'>
-            <Link to="/General-Info"><button className='Main--Button'> დაამატეთ რეზიუმე </button></Link>
+            <Link to="/Private-Info"><button className='Main--Button'> დაამატეთ რეზიუმე </button></Link>
         </div>
     )
 }
