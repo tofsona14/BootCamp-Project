@@ -1,11 +1,13 @@
 import React from "react";
 import "./FourthFull.css"
 import FourthFirst from "../FourthComponents/FourthFirst";
+import FourthSecond from "../FourthComponents/FourthSecond";
 
 const FourtFull = () => {
     return(
-        <div>
+        <div className="Fourth--Main">
             <FourthFirst />
+            <FourthSecond />
         </div>
     )
 }

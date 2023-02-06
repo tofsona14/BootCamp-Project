@@ -29,13 +29,13 @@ const ThirdSecond = () => {
                         <div>
                             <label>დაწყების რიცხვი</label>
                             <div>
-                            <input className='Third--Body--First--First--Input' placeholder='ანზორ' minLength={2}></input>
+                            <input type= "date"className='Third--Body--First--First--Input' placeholder='mm / dd / yyyy' minLength={2}></input>
                             </div>
                         </div>
                         <div className='Third--Body--First--Second'>
                             <label>დამთავრების რიცხვი</label>
                             <div>
-                            <input className='Third--Body--First--First--Input' placeholder='მუმლაძე' minLength={2}></input>
+                            <input type="date" className='Third--Body--First--First--Input' placeholder='mm / dd / yyyy' minLength={2}></input>
                             </div>
                         </div>
                 </div>

@@ -1,0 +1,35 @@
+.Fourth--Body--Fifth {
+    position: absolute;
+    width: 47.5vw;
+    bottom: 8vh;
+    margin-top: 8.9vh;
+    display: flex;
+    justify-content: space-between;
+}
+.Fourth--Body--Fifth--st--button {
+    width: 6.4vw;
+    font-size: 16px;
+    height: 4vh;
+    background-color: #6B40E3;
+    border: none;
+    border-radius: 3%;
+    color: white;
+    font-family: "Helvetica Neue";
+    cursor: pointer;
+}
+.Fourth--Body--Fifth--nd--button {
+    position: absolute;
+    right: 0;
+    width: 10vw;
+    height: 4vh;
+    color: white;
+    background-color: #6B40E3;
+    font-size: 17px;
+    border: none;
+    border-radius: 6%;
+    cursor: pointer;
+}
+.Fouth--Body--Fifth--ChildDiv {
+    display: flex;
+    justify-content: space-between;
+}
