@@ -91,6 +91,7 @@
     font-size: 17px;
     border: none;
     border-radius: 6%;
+    cursor: pointer;
 }
 .Second--Body--Sixth {
     position: relative;

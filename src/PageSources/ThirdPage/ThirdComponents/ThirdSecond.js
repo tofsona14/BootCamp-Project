@@ -49,7 +49,7 @@ const ThirdSecond = () => {
                 <button className='Third--Body--Button'> მეტი გამოცდილების დამატება </button>
                 <div className='Third--Body--Fifth'>
                     <Link to="/Private-Info"><button className='Third--Body--Fifth--st--button'>უკან</button></Link>
-                    <button className='Third--Body--Fifth--nd--button'>შემდეგი</button>
+                    <Link to="/Education"><button className='Third--Body--Fifth--nd--button'>შემდეგი</button></Link>
                 </div>
             </div>
         </div>

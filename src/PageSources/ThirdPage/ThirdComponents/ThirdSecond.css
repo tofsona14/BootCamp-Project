@@ -78,6 +78,7 @@
     border-radius: 3%;
     color: white;
     font-family: "Helvetica Neue";
+    cursor: pointer;
 }
 .Third--Body--Fifth--nd--button {
     width: 10vw;
@@ -87,4 +88,5 @@
     font-size: 17px;
     border: none;
     border-radius: 6%;
+    cursor: pointer;
 }
