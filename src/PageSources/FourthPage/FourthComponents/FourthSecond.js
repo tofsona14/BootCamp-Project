@@ -1,8 +1,15 @@
 import React from 'react'
 import './FourthSecond.css'
 import { Link } from 'react-router-dom'
+import DropDown from '../../DropDownMenu/DropDown'
+import { useState } from 'react'
+import DropDownLogo from '../../images/Vector.png'
 
 const FourthSecond = () => {
+    const [isActive, setIsActive] = useState(false)
+    const [select, setSelect] = useState('Choose')
+    const option = ["React", "Vue", 'angular']
+    console.log(isActive)
     return(
         <div className='Third--Second'>
             <div className='Third--Header'>
@@ -21,9 +28,23 @@ const FourthSecond = () => {
                 <div className='Third--Body--First--First'>
                         <div>
                             <label>ხარისხი</label>
-                            <div>
-                            <input className='Third--Body--First--First--Input' placeholder='ანზორ' minLength={2}></input>
-                            </div>
+                            <br></br>
+                            <div className='dropdown'>
+            <div className='dropdown-btn' onClick={e => setIsActive(!isActive)}>{select}</div>
+            {isActive && (
+                <div className='dropdown-content'>
+                    {option.map((option) => (
+                        <div onClick={(e) => {
+                            setSelect(option)
+                            setIsActive(false)
+                        }} 
+                        className="dropdown-item">
+                            {option}
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
                         </div>
                         <div className='Third--Body--First--Second'>
                             <label>დამთავრების რიცხვი</label>
@@ -36,7 +57,7 @@ const FourthSecond = () => {
                         <div className='Second--Body--Third--First'>
                             <label>აღწერა</label>
                         </div>
-                        <input style={{fontSize: "15px"}} className='Second--Body--Third--Second' placeholder='განათლების აღწერა'></input>
+                        {!isActive ? <input style={{fontSize: "15px"}} className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} className='Second--Body--Third--Second'  placeholder=''></input>}
                 </div>
                 <div className='Third--Body--Fourth'></div>
                 <button className='Third--Body--Button'> სხვა სასწავლებლის დამატება </button>

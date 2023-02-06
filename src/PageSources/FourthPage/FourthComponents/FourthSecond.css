@@ -33,3 +33,26 @@
     display: flex;
     justify-content: space-between;
 }
+.Container--Of--Fourth--Dropdown {
+    cursor: pointer;
+    position: relative;
+    width: 21vw;
+}
+.Fourth--Second--Input--Properties {
+    padding: 15px;
+
+}
+.background--dropdown {
+    background-color: rgb(192, 53, 53);
+    margin-left: 0.211vw;
+}
+.Input--andImg {
+    position: relative;
+    display: block;
+    border: solid black;
+}
+.Input--andImg img {
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
