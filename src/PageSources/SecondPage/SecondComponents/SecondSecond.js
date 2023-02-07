@@ -1,8 +1,22 @@
 import React from 'react'
 import './SecondSecond.css'
 import { Link } from 'react-router-dom'
+import { useFormik } from 'formik'
+import { secondSchema } from '../../schemas/schemas'
 
 const SecondSecond = () => {
+    const { values, errors, handleChange, handleSubmit} = useFormik({
+        initialValues: {
+            name: "",
+            surname: "",
+            email: "",
+            phone: "",
+            
+        },
+        validationSchema: secondSchema,
+    })
+    console.log(values)
+    console.log(errors)
     return(
         <div className='Second--Second'>
             <div className='Second--Header'>
@@ -12,16 +26,16 @@ const SecondSecond = () => {
             <div className='Second--Body'>
                     <div className='Second--Body--First--First'>
                         <div>
-                            <label>სახელი</label>
+                            <label htmlFor='name'>სახელი</label>
                             <div>
-                            <input className='Second--Body--First--First--Input' placeholder='ანზორ' minLength={2}></input>
+                            <input id='name' type="text" onChange={handleChange} value={values.name} className={values.name.length == 0 ? 'Second--Body--First--First--Input' : errors.name ? "Second--Body--First--First--Input--declined" : "Second--Body--First--First--Input--accepted"} placeholder='ანზორ' minLength={2}></input>
                             <p className='Second--Body--First--First-P' style={{color:"#2E2E2E"}}>მინიმუმ 2 ასო, ქართული ასოებით</p>
                             </div>
                         </div>
                         <div className='Second--Body--First--Second'>
-                            <label>გვარი</label>
+                            <label htmlFor='surname'>გვარი</label>
                             <div>
-                            <input className='Second--Body--First--First--Input' placeholder='მუმლაძე' minLength={2}></input>
+                            <input id="surname" name="surname"value={values.surname} onChange={handleChange} className={values.surname.length == 0 ? 'Second--Body--First--First--Input' : errors.surname ? "Second--Body--First--First--Input--declined" : "Second--Body--First--First--Input--accepted"} placeholder='მუმლაძე' minLength={2}></input>
                             <p className='Second--Body--First--First-P' style={{color:"#2E2E2E"}}>მინიმუმ 2 ასო, ქართული ასოებით</p>
                             </div>
                         </div>
@@ -37,14 +51,14 @@ const SecondSecond = () => {
                             <input className='Second--Body--Third--Second' placeholder='ზოგადი ინფო შენს შესახებ'></input>
                     </div>
                     <div className='Second--Body--Fourth'>
-                        <label>ელ.ფოსტა</label>
+                        <label htmlFor='email'>ელ.ფოსტა</label>
                         <div >
-                            <input className='Second--Body--Fourth--Input' placeholder='Redberry@redberry.ge'></input></div>
+                            <input id="email" name="email"onChange={handleChange} value={values.email} className='Second--Body--Fourth--Input' placeholder='Redberry@redberry.ge'></input></div>
                             <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა მთავრდებოდეს @redberry.ge-ით</p>
                         </div>
                     <div className='Second--Body--Fifth'>
-                        <label>მობილურის ნომერი</label>
-                        <div ><input className='Second--Body--Fourth--Input' placeholder='+995 551 12 34 56'></input></div>
+                        <label htmlFor='phone'>მობილურის ნომერი</label>
+                        <div ><input id="phone" name="phone"value={values.phone} onChange={handleChange} className='Second--Body--Fourth--Input' placeholder='+995 551 12 34 56'></input></div>
                         <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                     <div className='Second--Body--Sixth'>
