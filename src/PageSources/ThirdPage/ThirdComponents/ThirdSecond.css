@@ -15,6 +15,22 @@
     width: 46.5vw;
     height: 4vh;
     margin-top: 1vh;
+    outline: none;
+}.Third--Body--First--Input--accepted {
+    margin: 0.25vw;
+    width: 46.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+    border-color: #98E37E;
+    outline: none;
+
+}.Third--Body--First--Input--declined {
+    margin: 0.25vw;
+    width: 46.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+    border-color: #EF5050;
+    outline: none;
 }
 .Third--Body--First--Input::placeholder {
     position: absolute;
@@ -43,6 +59,15 @@
     width: 21vw;
     height: 4vh;
     border-color: rgb(175, 185, 190);
+    outline: none;
+}
+.Third--Body--First--First--Input--accepted {
+    margin-top: 1vh;
+    margin-left: 0.2vw;
+    width: 21vw;
+    height: 4vh;
+    border-color: #98E37E;
+    outline: none;
 }
 .Third--Body--First--First--Input::placeholder {
     position: absolute;

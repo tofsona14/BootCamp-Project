@@ -93,12 +93,30 @@ select.Second--Body--First--First--Input--accepted {
     padding-bottom: 70px;
     vertical-align: top;
     margin-top: 1vw;
+
 }
 .Second--Body--Fourth--Input {
     margin: 0.25vw;
     width: 46.5vw;
     height: 4vh;
     margin-top: 1vh;
+    outline: none;
+}
+.Second--Body--Fourth--Input--accepted {
+    margin: 0.25vw;
+    width: 46.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+    outline: none;
+    border-color: #98E37E;
+}
+.Second--Body--Fourth--Input--declined {
+    margin: 0.25vw;
+    width: 46.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+    outline: none;
+    border-color: #EF5050;
 }
 .Second--Body--Fourth--Input::placeholder {
     position: absolute;

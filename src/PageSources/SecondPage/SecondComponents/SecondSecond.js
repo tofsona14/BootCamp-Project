@@ -51,14 +51,14 @@ const SecondSecond = () => {
                             <input className='Second--Body--Third--Second' placeholder='ზოგადი ინფო შენს შესახებ'></input>
                     </div>
                     <div className='Second--Body--Fourth'>
-                        <label htmlFor='email'>ელ.ფოსტა</label>
+                        <label htmlFor='email'>ელ.ფოსტა</label> 
                         <div >
-                            <input id="email" name="email"onChange={handleChange} value={values.email} className='Second--Body--Fourth--Input' placeholder='Redberry@redberry.ge'></input></div>
+                            <input id="email" name="email"onChange={handleChange} value={values.email} className={values.email.length == 0 ? 'Second--Body--Fourth--Input' : errors.email ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='Redberry@redberry.ge'></input></div>
                             <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა მთავრდებოდეს @redberry.ge-ით</p>
                         </div>
                     <div className='Second--Body--Fifth'>
                         <label htmlFor='phone'>მობილურის ნომერი</label>
-                        <div ><input id="phone" name="phone"value={values.phone} onChange={handleChange} className='Second--Body--Fourth--Input' placeholder='+995 551 12 34 56'></input></div>
+                        <div ><input id="phone" type="text" name="phone"value={values.phone} onChange={handleChange} className={values.phone.length == 0 ? 'Second--Body--Fourth--Input' : errors.phone ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='+995 551 12 34 56'></input></div>
                         <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                     <div className='Second--Body--Sixth'>
