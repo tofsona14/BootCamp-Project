@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './FourthSecond.css'
 import { Link } from 'react-router-dom'
 import DropDown from '../../DropDownMenu/DropDown'
@@ -10,6 +10,12 @@ const FourthSecond = () => {
     const [select, setSelect] = useState('Choose')
     const option = ["React", "Vue", 'angular']
     console.log(isActive)
+    const [data, setData] = useState([])
+        useEffect(() => {
+            fetch("https://resume.redberryinternship.ge/api/degrees")
+            .then(response => response.json())
+            .then(data => setData(data))
+        }, [])
     return(
         <div className='Third--Second'>
             <div className='Third--Header'>
@@ -33,13 +39,13 @@ const FourthSecond = () => {
             <div className='dropdown-btn' onClick={e => setIsActive(!isActive)}>{select}</div>
             {isActive && (
                 <div className='dropdown-content'>
-                    {option.map((option) => (
+                    {data.map((option) => (
                         <div onClick={(e) => {
-                            setSelect(option)
+                            setSelect(option.title)
                             setIsActive(false)
                         }} 
                         className="dropdown-item">
-                            {option}
+                            {option.title}
                         </div>
                     ))}
                 </div>

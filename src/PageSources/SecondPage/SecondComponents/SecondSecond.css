@@ -54,7 +54,11 @@
 .Second--Body--Third--Second {
     width: 46.5vw;
     margin: 0.25vw;
-    border-color: rgb(175, 185, 190);
+    border: 1px solid #BCBCBC;
+    outline: none
+}
+.Second--Body--Third--Second:focus {
+    border: 2px solid #BCBCBC;
 }
 .Second--Body--Third--Second::placeholder {
     position: absolute;
