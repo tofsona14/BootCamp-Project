@@ -27,7 +27,7 @@ const ThirdSecond = () => {
         },
         validationSchema: thirdSchema
     })
-    const [states, setStates] = useState([values])
+    console.log(values)
     const [data, setData] = useState(info)
     const Clickadd = () => {
         setData((prev) => {
@@ -40,31 +40,21 @@ const ThirdSecond = () => {
             six: "აღწერა",
             seven:"მეტი გამოცდილების დამატება",
             eight: "მინიმუმ 2 სიმბოლო"
-        }]
+            }]
+        }
+        )
     }
-    
-    )
-    setStates((prev) => {
-        return [...prev, {
-            position: "",
-            employer: "",
-            startTime: "",
-            endTime: ""
-        }]
-    })
-}
-console.log(states)
-return(
+    console.log(data)
+    return(
         <div className='Third--Second'>
             <div className='Third--Header'>
                 <h2>{info[0].first}</h2>
                 <h3 style={{ color:"#2E2E2E"}}>2/3</h3>
             </div>
-            {data.map((e) =>  
-            (
+            {data.map((e) =>  (
                 <div className='Third--Second--Body'>
                 <div className='Third--Second--Body--First'>
-                    <label htmlFor='position'>{e.second}</label>
+                    <label htmlFor='position'>{info[esa].second}</label>
                     <br></br>
                     <div >
                         <input onChange={handleChange}  values={values.position} id="position" name='position' className={values.position.length == 0 ?'Third--Body--First--Input' : errors.position ? 'Third--Body--First--Input--declined' : "Third--Body--First--Input--accepted"} placeholder='დეველოპერი, დიზაინერი და ა.შ'></input>
@@ -72,7 +62,7 @@ return(
                     </div>
                 </div>
                 <div className='Third--Second--Body--Second'>
-                    <label htmlFor='employer'>{e.third}</label>
+                    <label htmlFor='employer'>{info[0].third}</label>
                     <div >
                         <input values={values.employer} id="employer" name='employer' onChange={handleChange}  className={values.employer.length == 0 ?'Third--Body--First--Input' : errors.employer ? 'Third--Body--First--Input--declined' : "Third--Body--First--Input--accepted"} placeholder='დამსაქმებელი'></input>
                         <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{info[0].eight}</p>
@@ -100,12 +90,12 @@ return(
                 </div>
                 <div className='Third--Body--Fourth'></div>
                 <button onClick={Clickadd} className='Third--Body--Button'> {info[0].seven} </button>
-            </div>
-            )) }
                 <div className='Third--Body--Fifth'>
                     <Link to="/Private-Info"><button className='Third--Body--Fifth--st--button'>უკან</button></Link>
                     <Link to="/Education"><button className='Third--Body--Fifth--nd--button'>შემდეგი</button></Link>
                 </div>
+            </div>
+            )) }
         </div>
     )
 }

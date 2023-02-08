@@ -8,7 +8,6 @@ import DropDownLogo from '../../images/Vector.png'
 const FourthSecond = () => {
     const [isActive, setIsActive] = useState(false)
     const [select, setSelect] = useState('Choose')
-    const option = ["React", "Vue", 'angular']
     console.log(isActive)
     const [data, setData] = useState([])
         useEffect(() => {

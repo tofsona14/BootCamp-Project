@@ -1,0 +1,12 @@
+.s {
+    width: 100%;
+    border-color: red;
+    outline:none;
+
+
+}
+.o {
+    width: 50%;
+    border-color: green;
+    outline: none;
+}
