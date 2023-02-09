@@ -8,6 +8,7 @@ import FourtFull from './PageSources/FourthPage/FourthFull/FourthFull';
 import Exercise from './PageSources/exercise/exercise';
 import { useState } from 'react';
 import Add from './PageSources/exercise/add';
+import SS from './PageSources/exercise/sc';
 function App() {
   const [select, setSelect] = useState("")
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/Education' element={<FourtFull />}></Route>
         <Route select={select} setSelect={setSelect} path='excersize' element={<Exercise />}></Route>
         <Route path='add' element={<Add />}></Route>
+        <Route path='ss' element={<SS />}></Route>
       </Routes>
       
     </div>
