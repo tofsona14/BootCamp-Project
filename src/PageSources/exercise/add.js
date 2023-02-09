@@ -27,7 +27,6 @@ const Add = () => {
     }
     const onSubmit = (e) => {
         e.preventDefault();
-        formValidation(formVal)
     }
     const onRemove = (i) => {
         const newForm = [...formVal]
