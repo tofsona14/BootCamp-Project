@@ -6,6 +6,25 @@ import { useState } from 'react'
 import DropDownLogo from '../../images/Vector.png'
 
 const FourthSecond = () => {
+
+    const formValidation = (se) => {
+        const s = [...se]
+        for (let index = 0; index < s.length; index++) {
+            if(s[index].college == "") {
+                s[index].collegeCheck = "you need to type something"
+            } else if(s[index].college[0].length < 2) {
+                s[index].collegeChecks = 'you need more letters'
+            }else if(s[index].college[0] == "") {
+                s[index].collegeCheck = ""
+            }else if(s[index].college[0].length == 1) {
+                s[index].collegeCheck = ""
+            }
+            else {
+                s[index].collegeCheck = "";
+                s[index].collegeChecks = ""
+            }
+        }
+    }
     const [data, setData] = useState()
     const [isActive, setIsActive] = useState(false)
     const [select, setSelect] = useState('Choose')
@@ -31,26 +50,33 @@ const FourthSecond = () => {
         })
         setDatas([...datas, {college: "",startDate: "", endDate: "", description: "" }])
     }
+    const onChange = (e, i) => {
+        let newForm = [...datas]
+        newForm[i][e.target.name] = [e.target.value]
+        setDatas(newForm)
+        formValidation(datas)
+    }
     
         useEffect(() => {
             fetch("https://resume.redberryinternship.ge/api/degrees")
             .then(response => response.json())
             .then(data => setData(data))
         }, [])
+        console.log(datas)
     return(
         <div className='Third--Second'>
             <div className='Third--Header'>
                 <h2>განათლება</h2>
                 <h3 style={{ color:"#2E2E2E"}}>3/3</h3>
             </div>
-                {sama.map((e, i) => (
+                {sama.map((e, i) => ( 
 
                     <div className='Third--Second--Body'>
                         <div className='Third--Second--Body--First'>
                             <label htmlFor='college'>{e.first}</label>
                             <br></br>
                             <div >
-                                <input className='Third--Body--First--Input' name='college' id='college' placeholder='სასწავლებელი'></input>
+                                <input onChange={(e) => onChange(e,i)} className='Third--Body--First--Input' value={datas[i].college || ""} name='college' id='college' placeholder='სასწავლებელი'></input>
                                 <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.six}</p>
                             </div>
                         </div>
