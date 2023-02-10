@@ -24,6 +24,19 @@ const FourthSecond = () => {
                 s[index].collegeCheck = "";
                 s[index].collegeChecks = ""
             }
+            if(s[index].dropDown == undefined) {
+                s[index].dropDownChecks = "you need to type something"
+            }else if(s[index].dropDown[0] == "Choose") {
+                s[index].dropDownCheck = "you need to choose something"
+            }else {
+                s[index].dropDownCheck = ""
+                s[index].dropDownChecks= ""
+            }
+            if(s[index].endDate == "") {
+                s[index].endDateCheck = "need to type something"
+            }else {
+                s[index].endDateCheck = ""
+            }
         }
     }
     const [dropDown, setDropDown] = useState([])
@@ -43,12 +56,12 @@ const FourthSecond = () => {
     const addRow = () => {
         setSama((prev) => {
             return [...prev, {
-        first: "სასწავლებელი",
-        second: "ხარისხი",
-        third: "დამთავრების რიცხვი",
-        fourth: "აღწერა",
-        fifth: "სხვა სასწავლებლის დამატება",
-        six: "მინიმუმ 2 სიმბოლო"
+                first: "სასწავლებელი",
+                second: "ხარისხი",
+                third: "დამთავრების რიცხვი",
+                fourth: "აღწერა",
+                fifth: "სხვა სასწავლებლის დამატება",
+                six: "მინიმუმ 2 სიმბოლო"
             }]
         })
         setDatas([...datas, {college: "",startDate: "", endDate: "", description: "" ,dropDown: ""}])
@@ -79,6 +92,7 @@ const FourthSecond = () => {
     console.log(datas)
     const example = (e, i) => {
         
+        formValidation(datas)
         let newForm = [...dropDown]
         console.log(e.target.innerHTML)
         newForm[i] = e.target.innerHTML
@@ -110,7 +124,7 @@ const FourthSecond = () => {
                             <label htmlFor='college'>{e.first}</label>
                             <br></br>
                             <div >
-                                <input onChange={(e) => onChange(e,i)} className='Third--Body--First--Input' value={datas[i].college || ""} name='college' id='college' placeholder='სასწავლებელი'></input>
+                                <input onChange={(e) => onChange(e,i)} className={datas[i].college == "" ?'Third--Body--First--Input' : datas[i].collegeCheck || datas[i].collegeChecks ? 'Third--Body--First--Input--declined' : 'Third--Body--First--Input--accepted'} value={datas[i].college || ""} name='college' id='college' placeholder='სასწავლებელი'></input>
                                 <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.six}</p>
                             </div>
                         </div>
@@ -118,7 +132,7 @@ const FourthSecond = () => {
                                 <div>
                                     <label>{e.second}</label>
                                     <br></br>
-                                    <div className='dropdown'>
+                                    <div className={datas[i].dropDown == "" || datas[i].dropDown== "Choose" ? 'dropdown' :  'dropdown--accepted'}>
                     <div className='dropdown-btn' name="dropDown" id="dropDown"  onClick={e =>  example(e, i)}>{select[i]}</div>
                     {isActive[i] && (
                         <div className='dropdown-content'>
@@ -153,7 +167,7 @@ const FourthSecond = () => {
                                 <div className='Third--Body--First--Second'>
                                     <label htmlFor='startDate'>{e.third}</label>
                                     <div>
-                                    <input name="endDate" id="endDate"type="date" className='Third--Body--First--First--Input' placeholder='მუმლაძე' minLength={2}></input>
+                                    <input name="endDate" onChange={(e) => onChange(e, i)} id="endDate"type="date" className={datas[i].endDate == "" ? 'Third--Body--First--First--Input' : 'Third--Body--First--First--Input--accepted'} placeholder='მუმლაძე' minLength={2}></input>
                                     </div>
                                 </div>
                         </div>
