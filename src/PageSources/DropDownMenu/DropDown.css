@@ -16,6 +16,7 @@ body {
     box-shadow:#333;
     user-select: none;
     position: relative;
+    outline: none;
 }
 .dropdown .dropdown-btn {
     padding: 10px;
@@ -26,6 +27,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    outline: none;
+    font-size: 13px;
 }
 .dropdown .dropdown-content {
     position: absolute;
@@ -39,9 +42,13 @@ body {
 }
 .dropdown .dropdown-content .dropdown-item {
     padding: 10px;
+    font-size: medium;
     cursor: pointer;
     transition: all 0.2s;
 }
 .dropdown .dropdown-content .dropdown-item:hover {
     background: #fcfcfc;
+}
+.dropdown-item {
+    font-size: 10px;
 }

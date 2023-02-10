@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import DropDown from '../../DropDownMenu/DropDown'
 import { useState } from 'react'
 import DropDownLogo from '../../images/Vector.png'
+import '../../DropDownMenu/DropDown.css'
 
 const FourthSecond = () => {
 
@@ -25,10 +26,12 @@ const FourthSecond = () => {
             }
         }
     }
+    const [dropDown, setDropDown] = useState([])
     const [data, setData] = useState()
+    const [first, setFirst] = useState(data)
     const [isActive, setIsActive] = useState(false)
-    const [select, setSelect] = useState('Choose')
-    const [datas, setDatas] = useState([{college: "",startDate: "", endDate: "", description: "" }])
+    const [select, setSelect] = useState(['Choose'])
+    const [datas, setDatas] = useState([{college: "",startDate: "", endDate: "", description: "", dropDown: ""}])
     const [sama, setSama] = useState([{
         first: "სასწავლებელი",
         second: "ხარისხი",
@@ -48,21 +51,39 @@ const FourthSecond = () => {
         six: "მინიმუმ 2 სიმბოლო"
             }]
         })
-        setDatas([...datas, {college: "",startDate: "", endDate: "", description: "" }])
+        setDatas([...datas, {college: "",startDate: "", endDate: "", description: "" ,dropDown: ""}])
+        setSelect((prev) => {
+            return [...prev, "Choose"]
+        })
+        setData((prev) => {
+            return [...prev, ...data ]
+        })
+        console.log(first)
     }
     const onChange = (e, i) => {
         let newForm = [...datas]
         newForm[i][e.target.name] = [e.target.value]
+        newForm[i].dropDown = dropDown[i]
         setDatas(newForm)
         formValidation(datas)
+        
     }
+    const example = (e, i) => {
+        setIsActive(!isActive)
+        let newForm = [...dropDown]
+        console.log(e.target.innerHTML)
+        newForm[i] = e.target.innerHTML
+        setDropDown(newForm)
+        
+        
+    }
+    console.log(select)
     
-        useEffect(() => {
-            fetch("https://resume.redberryinternship.ge/api/degrees")
-            .then(response => response.json())
-            .then(data => setData(data))
-        }, [])
-        console.log(datas)
+    useEffect(() => {
+        fetch("https://resume.redberryinternship.ge/api/degrees")
+        .then(response => response.json())
+        .then(data => setData([data]))
+    }, [])
     return(
         <div className='Third--Second'>
             <div className='Third--Header'>
@@ -85,16 +106,20 @@ const FourthSecond = () => {
                                     <label>{e.second}</label>
                                     <br></br>
                                     <div className='dropdown'>
-                    <div className='dropdown-btn' onClick={e => setIsActive(!isActive)}>{select}</div>
+                    <div className='dropdown-btn' name="dropDown" id="dropDown"  onClick={e =>  example(e, i)}>{select[i]}</div>
                     {isActive && (
                         <div className='dropdown-content'>
-                            {data.map((option) => (
+                            {data[i].map((option) => (
                                 <div onClick={(e) => {
-                                    setSelect(option.title)
+                                    setSelect((prev) => {
+                                        let info = [...prev]
+                                        info[i] = [option.title]
+                                        return info
+                                    })
                                     setIsActive(false)
                                 }} 
                                 className="dropdown-item">
-                                    {option.title}
+                                    <p style={{fontSize: "10px"}} >{option.title}</p>
                                 </div>
                             ))}
                         </div>
