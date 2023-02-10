@@ -58,7 +58,7 @@ const FourthSecond = () => {
         setData((prev) => {
             return [...prev, ...data ]
         })
-        console.log(first)
+        console.log(data)
     }
     const onChange = (e, i) => {
         let newForm = [...datas]
@@ -66,8 +66,14 @@ const FourthSecond = () => {
         newForm[i].dropDown = dropDown[i]
         setDatas(newForm)
         formValidation(datas)
+        setDatas((prev) => {
+            let info = [...prev]
+            info[i].dropDown = select[i]
+            return info
+        })
         
     }
+    console.log(select[0])
     const example = (e, i) => {
         setIsActive(!isActive)
         let newForm = [...dropDown]
@@ -77,7 +83,7 @@ const FourthSecond = () => {
         
         
     }
-    console.log(select)
+    console.log(datas)
     
     useEffect(() => {
         fetch("https://resume.redberryinternship.ge/api/degrees")
@@ -114,6 +120,12 @@ const FourthSecond = () => {
                                     setSelect((prev) => {
                                         let info = [...prev]
                                         info[i] = [option.title]
+                                        
+                                        return info
+                                    })
+                                    setDatas((prev) => {
+                                        let info = [...prev]
+                                        info[i].dropDown = select[i]
                                         return info
                                     })
                                     setIsActive(false)
