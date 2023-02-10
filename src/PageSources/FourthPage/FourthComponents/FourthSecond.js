@@ -29,7 +29,7 @@ const FourthSecond = () => {
     const [dropDown, setDropDown] = useState([])
     const [data, setData] = useState()
     const [first, setFirst] = useState(data)
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useState([false])
     const [select, setSelect] = useState(['Choose'])
     const [datas, setDatas] = useState([{college: "",startDate: "", endDate: "", description: "", dropDown: ""}])
     const [sama, setSama] = useState([{
@@ -58,7 +58,10 @@ const FourthSecond = () => {
         setData((prev) => {
             return [...prev, ...data ]
         })
-        console.log(data)
+        setIsActive((prev) => {
+            return [...prev, false]
+        })
+        
     }
     const onChange = (e, i) => {
         let newForm = [...datas]
@@ -73,17 +76,21 @@ const FourthSecond = () => {
         })
         
     }
-    console.log(select[0])
+    console.log(datas)
     const example = (e, i) => {
-        setIsActive(!isActive)
+        
         let newForm = [...dropDown]
         console.log(e.target.innerHTML)
         newForm[i] = e.target.innerHTML
         setDropDown(newForm)
+        setIsActive((prev) => {
+            let info = prev
+            info[i] = true
+            return info
+        })
         
         
     }
-    console.log(datas)
     
     useEffect(() => {
         fetch("https://resume.redberryinternship.ge/api/degrees")
@@ -113,7 +120,7 @@ const FourthSecond = () => {
                                     <br></br>
                                     <div className='dropdown'>
                     <div className='dropdown-btn' name="dropDown" id="dropDown"  onClick={e =>  example(e, i)}>{select[i]}</div>
-                    {isActive && (
+                    {isActive[i] && (
                         <div className='dropdown-content'>
                             {data[i].map((option) => (
                                 <div onClick={(e) => {
@@ -123,12 +130,17 @@ const FourthSecond = () => {
                                         
                                         return info
                                     })
+                                    setIsActive((prev)=> {
+                                        let info = prev
+                                        info[i] = false
+                                        return info
+                                    })
+                                    console.log(isActive)
                                     setDatas((prev) => {
                                         let info = [...prev]
                                         info[i].dropDown = select[i]
                                         return info
                                     })
-                                    setIsActive(false)
                                 }} 
                                 className="dropdown-item">
                                     <p style={{fontSize: "10px"}} >{option.title}</p>
