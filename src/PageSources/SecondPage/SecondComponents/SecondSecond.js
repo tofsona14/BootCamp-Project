@@ -69,6 +69,37 @@ const SecondSecond = () => {
 
        400 )
     },)
+    const [ds, setDs] = useState(null)
+    const SetPhoto = async (e) => {
+        const file = e[0]
+        const base64 = await convertBase64(file)
+        setDs(base64)
+        
+    }
+    const convertBase64 = (file) => {
+        return new Promise((resolve,reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file)
+            fileReader.onload = () => {
+                resolve(fileReader.result)
+            }
+            
+            fileReader.oneerror = (error) => {
+                reject(error);
+            }
+        })
+    }
+    console.log(ds)
+    useEffect(() => {
+        let so = window.localStorage.getItem('val-base')
+        setDs(JSON.parse(so))
+    },[])
+    useEffect(() => {
+        setTimeout(() => {
+
+            window.localStorage.setItem("val-base", JSON.stringify(ds))
+        }, 400)
+    })
     return(
         <div className='Second--Second'>
             <div className='Second--Header'>
@@ -94,7 +125,7 @@ const SecondSecond = () => {
                     </div>
                     <div className='Second--Body--Second--First'>
                         <label>პირადი ფოტოს ატვირთვა</label>
-                        <input type="file" className='Second--Body--Second--First--Button'></input>
+                        <input type="file" className='Second--Body--Second--First--Button' onChange={(e) => SetPhoto(e.target.files)}></input>
 
                     </div>
                     <div className='Second--Body--Third'>
