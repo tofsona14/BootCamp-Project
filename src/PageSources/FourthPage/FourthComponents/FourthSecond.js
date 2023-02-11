@@ -41,7 +41,6 @@ const FourthSecond = () => {
     }
     const [dropDown, setDropDown] = useState([])
     const [data, setData] = useState()
-    const [first, setFirst] = useState(data)
     const [isActive, setIsActive] = useState([false])
     const [select, setSelect] = useState(['Choose'])
     const [datas, setDatas] = useState([{college: "",startDate: "", endDate: "", description: "", dropDown: ""}])
@@ -124,7 +123,7 @@ const FourthSecond = () => {
                             <label htmlFor='college'>{e.first}</label>
                             <br></br>
                             <div >
-                                <input onChange={(e) => onChange(e,i)} className={datas[i].college == "" ?'Third--Body--First--Input' : datas[i].collegeCheck || datas[i].collegeChecks ? 'Third--Body--First--Input--declined' : 'Third--Body--First--Input--accepted'} value={datas[i].college || ""} name='college' id='college' placeholder='სასწავლებელი'></input>
+                                <input onChange={(e) => onChange(e,i)} className={datas[i].college == "" ?'Third--Body--First--Input' : datas[i].collegeCheck || datas[i].collegeChecks ? 'Third--Body--First--Input--declined' : 'Third--Body--First--Input--accepted'} value={datas[i].college || ""} name='college' id='college' placeholder={!isActive[i-1] ?'სასწავლებელი': ""}></input>
                                 <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.six}</p>
                             </div>
                         </div>
@@ -175,7 +174,7 @@ const FourthSecond = () => {
                                 <div className='Second--Body--Third--First'>
                                     <label htmlFor='description'>{e.fourth}</label>
                                 </div>
-                                {!isActive ? <input style={{fontSize: "15px"}} name="description" id='description' className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} className='Second--Body--Third--Second'  placeholder=''></input>}
+                                {!isActive[i] ? <input style={{fontSize: "15px"}} name="description" id='description' className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} className='Second--Body--Third--Second'  placeholder=''></input>}
                         </div>
                         <div className='Third--Body--Fourth'></div>
                         <button onClick={addRow} className='Third--Body--Button'> {e.fifth} </button>
