@@ -7,6 +7,7 @@
     justify-content: space-between;
 }
 .Fourth--Body--Fifth--st--button {
+    position: absolute;
     width: 6.4vw;
     font-size: 16px;
     height: 4vh;
@@ -16,6 +17,7 @@
     color: white;
     font-family: "Helvetica Neue";
     cursor: pointer;
+    bottom: 0;
 }
 .Fourth--Body--Fifth--nd--button {
     position: absolute;
@@ -28,8 +30,12 @@
     border: none;
     border-radius: 6%;
     cursor: pointer;
+    bottom: 0;
 }
 .Fouth--Body--Fifth--ChildDiv {
+    height: 20%;
+    width: 100%;
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -61,4 +67,13 @@
 }
 .dropdown-content {
     font-size: 10px
+}
+.Fourth--Body--Button {
+    margin-top: 4vh;
+    width: 17.5vw;
+    height: 4.2vh;
+    color: white;
+    background-color: #62A1EB;
+    border: none;
+    border-radius: 3%;
 }

@@ -91,7 +91,6 @@ const FourthSecond = () => {
     console.log(datas)
     const example = (e, i) => {
         
-        formValidation(datas)
         let newForm = [...dropDown]
         console.log(e.target.innerHTML)
         newForm[i] = e.target.innerHTML
@@ -101,6 +100,8 @@ const FourthSecond = () => {
             info[i] = true
             return info
         })
+        formValidation(datas)
+
         
         
     }
@@ -131,7 +132,7 @@ const FourthSecond = () => {
                                 <div>
                                     <label>{e.second}</label>
                                     <br></br>
-                                    <div className={datas[i].dropDown == "" || datas[i].dropDown== "Choose" ? 'dropdown' :  'dropdown--accepted'}>
+                                    <div className={datas[i].dropDown == "" || datas[i].dropDown== "Choose" ? 'dropdown--declined' :  'dropdown--accepted'}>
                     <div className='dropdown-btn' name="dropDown" id="dropDown"  onClick={e =>  example(e, i)}>{select[i]}</div>
                     {isActive[i] && (
                         <div className='dropdown-content'>
@@ -154,6 +155,10 @@ const FourthSecond = () => {
                                         info[i].dropDown = select[i]
                                         return info
                                     })
+                                 
+                                 
+                                 
+
                                 }} 
                                 className="dropdown-item">
                                     <p style={{fontSize: "10px"}} >{option.title}</p>
@@ -177,10 +182,14 @@ const FourthSecond = () => {
                                 {!isActive[i] ? <input style={{fontSize: "15px"}} name="description" id='description' className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} className='Second--Body--Third--Second'  placeholder=''></input>}
                         </div>
                         <div className='Third--Body--Fourth'></div>
-                        <button onClick={addRow} className='Third--Body--Button'> {e.fifth} </button>
+            <br></br>
+            <br></br>
+            <br></br>
+
             </div>
                 ))
-                }
+            }
+            <button onClick={addRow} className='Fourth--Body--Button'> {sama[0].fifth} </button>
                     <div className='Fouth--Body--Fifth--ChildDiv'>
                         <Link to="/Experience"><button className='Fourth--Body--Fifth--st--button'>უკან</button></Link>
                         <Link to="/Education"><button className='Fourth--Body--Fifth--nd--button'>შემდეგი</button></Link>
