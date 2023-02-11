@@ -18,12 +18,26 @@
     display: flex;
     justify-content: space-between;
 }
+.Second--Body--First--First--Input:focus {
+    border: 2px solid #BCBCBC;
+
+}
+.Second--Body--First--First--Input--declined:focus {
+    border: 2px solid #EF5050;
+
+    
+}
+.Second--Body--First--First--Input--accepted:focus {
+    border: 2px solid #98E37E;
+
+    
+}
 .Second--Body--First--First--Input {
     margin-top: 1vh;
     margin-left: 0.2vw;
     width: 21vw;
     height: 4vh;
-    border-color: rgb(175, 185, 190);
+    border: 1px solid #BCBCBC;
     outline: none;
 }
 .Second--Body--First--First--Input--declined {
@@ -101,6 +115,12 @@ select.Second--Body--First--First--Input--accepted {
     height: 4vh;
     margin-top: 1vh;
     outline: none;
+    border: 1px solid #BCBCBC;
+    
+}
+.Second--Body--Fourth--Input:focus {
+    border: 2px solid #BCBCBC;
+
 }
 .Second--Body--Fourth--Input--accepted {
     margin: 0.25vw;
@@ -110,6 +130,10 @@ select.Second--Body--First--First--Input--accepted {
     outline: none;
     border-color: #98E37E;
 }
+.Second--Body--Fourth--Input--accepted:focus {
+    border-color:2px solid #98E37E;
+
+}
 .Second--Body--Fourth--Input--declined {
     margin: 0.25vw;
     width: 46.5vw;
@@ -117,6 +141,10 @@ select.Second--Body--First--First--Input--accepted {
     margin-top: 1vh;
     outline: none;
     border-color: #EF5050;
+}
+.Second--Body--Fourth--Input--declined:focus {
+    border-color: 2px solid #EF5050;
+
 }
 .Second--Body--Fourth--Input::placeholder {
     position: absolute;

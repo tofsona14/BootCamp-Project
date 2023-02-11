@@ -58,8 +58,13 @@
     margin-left: 0.2vw;
     width: 21vw;
     height: 4vh;
-    border-color: rgb(175, 185, 190);
+    border-color: 1px solid #BCBCBC;
     outline: none;
+    
+}
+.Third--Body--First--First--Input:focus {
+    border: 2px solid #BCBCBC;
+    
 }
 .Third--Body--First--First--Input--accepted {
     margin-top: 1vh;
@@ -68,6 +73,14 @@
     height: 4vh;
     border-color: #98E37E;
     outline: none;
+}
+.Third--Body--First--First--Input--accepted:focus {
+    border: 2px solid  #98E37E;;
+
+}
+.Third--Body--First--First--Input:focus {
+    border: 2px solid #BCBCBC;
+    
 }
 .Third--Body--First--First--Input::placeholder {
     position: absolute;

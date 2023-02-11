@@ -114,9 +114,9 @@ return(
                         <input name='otherD'onChange={(e) => handleChange(e,i)} value={data[i].otherD} style={{fontSize: "15px"}} className='Second--Body--Third--Second' placeholder='როლი თანამდებობაზე და ზოგადი აღწერა'></input>
                 </div>
                 <div className='Third--Body--Fourth'></div>
-                <button onClick={addRow} className='Third--Body--Button'> {e.seven} </button>
             </div>
             )) }
+            <button onClick={addRow} className='Third--Body--Button'> {sama[0].seven} </button>
                 <div className='Third--Body--Fifth'>
                     <Link to="/Private-Info"><button className='Third--Body--Fifth--st--button'>უკან</button></Link>
                     <Link to="/Education"><button className='Third--Body--Fifth--nd--button'>შემდეგი</button></Link>
