@@ -101,11 +101,27 @@ const FourthSecond = () => {
             return info
         })
         formValidation(datas)
-
+        
         
         
     }
     
+    
+    useEffect(() => {
+      const storedValue = localStorage.getItem("value");
+      if (storedValue) {
+        setDatas(JSON.parse(storedValue));
+      }
+    }, []);
+    
+    useEffect(() => {
+        setTimeout(() => {
+            localStorage.setItem("value", JSON.stringify(datas));
+        
+        }, 4)
+      },[datas]);
+    
+      // Get the value from local storage when the component mounts
     useEffect(() => {
         fetch("https://resume.redberryinternship.ge/api/degrees")
         .then(response => response.json())
@@ -179,7 +195,7 @@ const FourthSecond = () => {
                                 <div className='Second--Body--Third--First'>
                                     <label htmlFor='description'>{e.fourth}</label>
                                 </div>
-                                {!isActive[i] ? <input style={{fontSize: "15px"}} name="description" id='description' className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} className='Second--Body--Third--Second'  placeholder=''></input>}
+                                {!isActive[i] ? <input style={{fontSize: "15px"}} onChange={(e) => onChange(e, i)}name="description" id='description' value={datas[i].description} className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} value={datas[i].description} className='Second--Body--Third--Second'  placeholder=''></input>}
                         </div>
                         <div className='Third--Body--Fourth'></div>
             <br></br>

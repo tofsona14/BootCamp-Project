@@ -1,5 +1,5 @@
 import * as yup from 'yup'
-const minTW = /^[ა-ჰ]{2,}$/
+export const minTW = /^[ა-ჰ]{2,}$/
 const numd = /^\+995\d{9}$/
 const emailC = /redberry.ge$/
 const minTL = /\w{2}/

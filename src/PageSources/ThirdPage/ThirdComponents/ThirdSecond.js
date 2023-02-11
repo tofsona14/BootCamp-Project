@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ThirdSecond.css'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
@@ -31,6 +31,7 @@ const ThirdSecond = () => {
             setData(s)
         }
     }
+    
     const [data, setData] = useState([{position: "",employer: "",startTime: "",endTime: "",otherD: ""}])
     const [sama, setSama] = useState([{
         first: "გამოცდილება",
@@ -66,9 +67,20 @@ const ThirdSecond = () => {
         formValidation(data)
         console.log(data)
     }
+    useEffect(() => {
+        const secondVal = window.localStorage.getItem("val-2")
+        if(secondVal) {
+            setData(JSON.parse(secondVal))
+        }
+},[])
    
+    useEffect(() => {
+        setTimeout(() => {
+
+            window.localStorage.setItem("val-2", JSON.stringify(data))
+        }, 4)
+    })
     
-    console.log(data)
 return(
         <div className='Third--Second'>
             <div className='Third--Header'>
@@ -114,9 +126,9 @@ return(
                         <input name='otherD'onChange={(e) => handleChange(e,i)} value={data[i].otherD} style={{fontSize: "15px"}} className='Second--Body--Third--Second' placeholder='როლი თანამდებობაზე და ზოგადი აღწერა'></input>
                 </div>
                 <div className='Third--Body--Fourth'></div>
+                <button onClick={addRow} className='Third--Body--Button'> {e.seven} </button>
             </div>
             )) }
-            <button onClick={addRow} className='Third--Body--Button'> {sama[0].seven} </button>
                 <div className='Third--Body--Fifth'>
                     <Link to="/Private-Info"><button className='Third--Body--Fifth--st--button'>უკან</button></Link>
                     <Link to="/Education"><button className='Third--Body--Fifth--nd--button'>შემდეგი</button></Link>
