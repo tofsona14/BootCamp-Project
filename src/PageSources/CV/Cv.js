@@ -8,21 +8,24 @@ const Cv = () => {
     const [first, setFirst] = useState([])
     const [second, setSecond] = useState([])
     const [photo, setPhoto] = useState("")
+    const[third, setThird] = useState([])
    
     useEffect(() => {
         setInterval(() => {
             let f = window.localStorage.getItem("val-base")
             let s = window.localStorage.getItem("first-val")
             let o = window.localStorage.getItem("val-2")
+            let l = window.localStorage.getItem("value")
             if(s) {
                 setFirst(JSON.parse(s))
                 setSecond(JSON.parse(o))
                 setPhoto(JSON.parse(f))
+                setThird(JSON.parse(l))
             
         }
         }, 900)
-        
     }, [])
+    console.log(second)
     return(
         first.map((e, i) => (
             <div>
@@ -59,17 +62,37 @@ const Cv = () => {
             </div>
             <div className='line'></div>
             <div className='Gamocdileba'>გამოცდილება</div>
-                {second.map((i) => (
-                    <div className='second--map'>
-                        <div></div>
-                        <div>
-                        <div></div>
-                        <div></div>
-                        </div>
-                        <div></div>
-                    </div>
+            <div className='second--map'>
+                {second.map((i, l) => {
+                    if(i.position != 0 ) {
+                    return (<div className='oo'>
+                                <div className='second--map--employer'>
+                                    <p className='p--map--nd'> {`${i.position},`}</p>
+                                    <p className='p--map--nd'>{i.employer}</p>
+                                </div>
+                                {i.startTime != "" ? (
+                                    <div>
+                                        <p className='p--map--rd'>{`${i.startTime}-${i.endTime}`}</p>
+                                    </div>
+                                ): i.endTime != "" ? (
+                                    <div>
+                                        <p className='p--map--rd'>{`-${i.endTime}`}</p>
+                                    </div>
+                                ): console.log('s') }
+                                {i.otherD != "" ? (
+                                    <div><p className='descriptions'>{i.otherD}</p></div>
+                                ): console.log('otherD')}
+                            </div>
+                            
+                        )
+                        
+                    }
 
-                ))}
+                    
+                    
+                })}
+                {}
+            </div>
             </div>
         ))
     )

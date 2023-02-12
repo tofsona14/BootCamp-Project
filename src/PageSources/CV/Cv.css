@@ -31,21 +31,16 @@ body{
     
 }
 .Gamocdileba {
-    width: 15vw;
-    padding: 3vw;
-    margin-left: 1.74vw; 
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5.6vw;
     font-weight: 700;
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
     color:#F93B1D;
 }
 .second--map {
-    padding: 3vw;
-    margin-left: 4vw; 
 }
 .MainDiv--Cv  {
     padding: 3vw;
@@ -71,6 +66,10 @@ body{
     word-wrap: break-word;
     margin-bottom: 4vh 2vw;
 }
+.second--map {
+    width: 42vw;
+    word-wrap: break-word;
+}
 .sdasd {
     display: block;
     flex-wrap: wrap;
@@ -90,4 +89,24 @@ body{
 }
 .p--sdasd {
     font-size: 13px;
+}
+.p--map--nd {
+    font-size: large;
+}
+.second--map--employer {
+    display: flex;
+    width: 38.2vw;
+    word-wrap: break-word;
+    margin-top: 3vh;
+    margin-left: 6vw;
+}
+.p--map--rd{
+    margin-left: 6vw;
+    font-size: small;
+    color:#909090;
+}
+.descriptions {
+    width: 38.2vw;
+    margin-left: 6vw;
+    word-wrap: break-word;
 }
