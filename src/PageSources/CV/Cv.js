@@ -23,9 +23,9 @@ const Cv = () => {
                 setThird(JSON.parse(l))
             
         }
-        }, 900)
+        }, 2000)
     }, [])
-    console.log(second)
+    console.log(third)
     return(
         first.map((e, i) => (
             <div>
@@ -72,11 +72,11 @@ const Cv = () => {
                                 </div>
                                 {i.startTime != "" ? (
                                     <div>
-                                        <p className='p--map--rd'>{`${i.startTime}-${i.endTime}`}</p>
+                                        <p className='p--map--rd'>{`${i.startTime} - ${i.endTime}`}</p>
                                     </div>
                                 ): i.endTime != "" ? (
                                     <div>
-                                        <p className='p--map--rd'>{`-${i.endTime}`}</p>
+                                        <p className='p--map--rd'>{`- ${i.endTime}`}</p>
                                     </div>
                                 ): console.log('s') }
                                 {i.otherD != "" ? (
@@ -91,8 +91,40 @@ const Cv = () => {
                     
                     
                 })}
-                {}
             </div>
+            {third[0].college != "" || third[0].dropDown !="" || third[0].endDate != "" || third[0].description != "" ? (<div className='Gamocdileba'>განათლება</div>) : console.log("s")}
+            
+                {third.map((o, l) => {
+                    if(o.college[0] != "") {
+                        return(
+                            <div>
+                                <div>
+                                    <div className='second--map--employer'><p className='p--map--nd'>{`${o.college},${o.dropDown}`}</p></div>
+                                </div>
+                                <div>
+                                    <p className='p--map--rd'>{` ${o.endDate}`}</p>
+                                </div>
+                                <div><p className='descriptions'>{o.description}</p></div>
+                            </div>
+                        )
+                    }else if(o.dropDown[0] != "") {
+                        return(
+                        <div>
+                            <div className='second--map--employer'><p className='p--map--nd'>{`${o.dropDown}`}</p></div>
+                        </div>
+                        )
+                        
+                    }else {
+                        <div>
+                                
+                                <div>
+                                    <p className='p--map--rd'>{` ${o.endDate}`}</p>
+                                </div>
+                                <div><p className='descriptions'>{o.description}</p></div>
+                            </div>
+                    }
+            }
+                )}
             </div>
         ))
     )
