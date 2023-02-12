@@ -12,7 +12,10 @@ const Exercise = () => {
             repeatPassword: ""
         },
         validationSchema: basicschema
-    })
+    })  
+    let soa = "fuckit"
+    const moa = soa.slice(-4)
+    console.log(values)
     return(
         <form autoComplete="off">
             <label className={errors.email ? "accept" : "declined"} htmlFor="email">Email</label>

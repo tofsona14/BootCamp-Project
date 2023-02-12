@@ -1,0 +1,93 @@
+body{
+    background-color: white;
+}
+.MainDiv--Cv {
+    display: flex;
+}
+.name--surname {
+    margin-left: 0.4vw;
+    width: 18.5vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #F93B1D;
+    font-family: "Helvetica Neue";
+}
+
+.line {
+    margin-left: 5.3vw;
+    width: 39.7vw;
+    border: 1px dotted gray;
+    outline: none;
+}
+.imgs {
+    margin-top: 1.5vw;
+    width: 15vw;
+    height: 20vh;
+    border-radius: 60%;
+    margin-left: 5vw;
+    position: absolute;
+    
+    
+}
+.Gamocdileba {
+    width: 15vw;
+    padding: 3vw;
+    margin-left: 1.74vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5.6vw;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    color:#F93B1D;
+}
+.second--map {
+    padding: 3vw;
+    margin-left: 4vw; 
+}
+.MainDiv--Cv  {
+    padding: 3vw;
+    margin-left: 4vw;
+}
+.Email--Cv {
+    display: flex;
+    position: absolute;
+}
+.phone--Cv {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    
+}
+.email--phone {
+    position: relative;
+    width: 20vw;
+    height: 6vh;
+}
+.about--cv {
+    width: 25.4vw;
+    word-wrap: break-word;
+    margin-bottom: 4vh 2vw;
+}
+.sdasd {
+    display: block;
+    flex-wrap: wrap;
+    width: 15vw;
+    height: 10vh;
+    
+}
+.aboutMe--cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5.6vw;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    color:#F93B1D;
+}
+.p--sdasd {
+    font-size: 13px;
+}

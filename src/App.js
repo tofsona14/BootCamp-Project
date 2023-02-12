@@ -9,6 +9,7 @@ import Exercise from './PageSources/exercise/exercise';
 import { useState } from 'react';
 import Add from './PageSources/exercise/add';
 import SS from './PageSources/exercise/sc';
+import Cv from './PageSources/CV/Cv';
 function App() {
   const [select, setSelect] = useState("")
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route select={select} setSelect={setSelect} path='excersize' element={<Exercise />}></Route>
         <Route path='add' element={<Add />}></Route>
         <Route path='ss' element={<SS />}></Route>
+        <Route path='ll' element={<Cv />}></Route>
       </Routes>
       
     </div>

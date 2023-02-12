@@ -78,7 +78,7 @@ const ThirdSecond = () => {
         setTimeout(() => {
 
             window.localStorage.setItem("val-2", JSON.stringify(data))
-        }, 4)
+        }, 400)
     })
     
 return(

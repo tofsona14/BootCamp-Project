@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
 import { secondSchema } from '../../schemas/schemas'
 import { minTW } from '../../schemas/schemas'
+import Cv from '../../CV/Cv'
 
 const SecondSecond = () => {
     const { values, errors, handleChange, handleSubmit} = useFormik({
