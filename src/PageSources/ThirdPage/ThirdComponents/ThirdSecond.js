@@ -92,41 +92,13 @@ const ThirdSecond = () => {
         setBoolean(required.includes('required'))
         
     }
+    
     useEffect(() => {
         const secondVal = window.localStorage.getItem("val-2")
         if(secondVal) {
             setData(JSON.parse(secondVal))
         }
 },[])
-    data.map((e, i) => {
-        setRequired((prev) => {
-            let s = [...prev]
-            if(data[0].position == "" || data[0].employer == "" || data[0].startTime == "" || data[0].endTime == "" || data[0].otherD == "" || data[0].positionErr != "" || data[0].employerErr != ""  ) {
-               s[0] = 'required'
-               setRequired(s) 
-            }else {
-                s[0] = ""
-                setRequired(s)
-            }
-            if(i != 0 && data[i].position == "" && data[i].employer == "" && data[i].startTime == "" && data[i].endTime == "" && data[i].otherD == "" ) {
-                s[i] = ""
-                setRequired(s)
-            }if(i != 0 && data[i].employerErr == "" && data[i].positionErr == "" ) {
-                s[i] = ''
-                setRequired(s)
-            }
-            else {
-                if(i != 0) {
-                    s[i] = 'required'
-                    setRequired(s)
-                }
-            
-        }
-            }
-
-        )
-        setBoolean(required.includes('required'))
-    })
    
     useEffect(() => {
         setTimeout(() => {
@@ -135,7 +107,6 @@ const ThirdSecond = () => {
         }, 400)
     })
     console.log(boolean)
-    console.log(`${required}......`)
 return(
         <div className='Third--Second'>
             <div className='Third--Header'>

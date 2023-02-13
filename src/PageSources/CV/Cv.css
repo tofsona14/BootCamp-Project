@@ -6,7 +6,7 @@ body{
 }
 .name--surname {
     margin-left: 0.4vw;
-    width: 18.5vw;
+    width: 15.5vw;
     display: flex;
     justify-content: space-between;
     font-size: 11px;

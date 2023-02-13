@@ -179,3 +179,29 @@ label {
     color: Solid black;
 }
 
+.relatives { 
+    position: relative;
+}
+.relatives img {
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    top: 2.28vh;
+}
+.update-btn {
+    margin-top: 0.5vw;
+    margin-left: 20px;
+    height: 2.4vh;
+    width: 7.5vw;
+    background-color: #0E80BF;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    weight: 400;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.input--accept {
+    position: absolute;
+}

@@ -5,6 +5,7 @@ import { useFormik } from 'formik'
 import { secondSchema } from '../../schemas/schemas'
 import { minTW } from '../../schemas/schemas'
 import Cv from '../../CV/Cv'
+import logo from '../../images/damtanjet.png'
 
 const SecondSecond = () => {
     
@@ -103,22 +104,31 @@ const SecondSecond = () => {
                         <div>
                             <label htmlFor='name'>სახელი</label>
                             <div>
-                            <input id='name' name='name' type="text" onChange={onChanges} value={info[0].name} className={info[0].name.length == 0 ? 'Second--Body--First--First--Input' : info[0].nameErr != "" ? "Second--Body--First--First--Input--declined" : "Second--Body--First--First--Input--accepted"} placeholder='ანზორ' minLength={2}></input>
+                                <div className='relatives'>
+                                    
+                                    <input id='name' name='name' type="text" onChange={onChanges} value={info[0].name} className={info[0].name.length == 0 ? 'Second--Body--First--First--Input' : info[0].nameErr != "" ? "Second--Body--First--First--Input--declined" : "Second--Body--First--First--Input--accepted"} placeholder='ანზორ' minLength={2}></input>
+                                    {info[0].name.length == 0 ?<img  style={{display:"none"}} src={logo}></img>: info[0].nameErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  style={{display:"flex"}} src={logo}></img>}
+                                </div>
+                            
                             <p className='Second--Body--First--First-P' style={{color:"#2E2E2E"}}>მინიმუმ 2 ასო, ქართული ასოებით</p>
                             </div>
                         </div>
                         <div className='Second--Body--First--Second'>
                             <label htmlFor='surname'>გვარი</label>
                             <div>
-                            <input id="surname" name="surname"value={info[0].surname} onChange={onChanges} className={info[0].surname.length == 0 ? 'Second--Body--First--First--Input' : info[0].surnameErr ? "Second--Body--First--First--Input--declined" : "Second--Body--First--First--Input--accepted"} placeholder='მუმლაძე' minLength={2}></input>
-                            <p className='Second--Body--First--First-P' style={{color:"#2E2E2E"}}>მინიმუმ 2 ასო, ქართული ასოებით</p>
+                                <div className='relatives'>
+                                <input id="surname" name="surname"value={info[0].surname} onChange={onChanges} className={info[0].surname.length == 0 ? 'Second--Body--First--First--Input' : info[0].surnameErr ? "Second--Body--First--First--Input--declined" : "Second--Body--First--First--Input--accepted"} placeholder='მუმლაძე' minLength={2}></input>
+                                {info[0].surname.length == 0 ?<img  style={{display:"none"}} src={logo}></img>: info[0].surnameErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  style={{display:"flex"}} src={logo}></img>}
+                                
+                                </div>
+                                <p className='Second--Body--First--First-P' style={{color:"#2E2E2E"}}>მინიმუმ 2 ასო, ქართული ასოებით</p>
                             </div>
                         </div>
                     </div>
                     <div className='Second--Body--Second--First'>
                         <label>პირადი ფოტოს ატვირთვა</label>
-                        <input type="file" className='Second--Body--Second--First--Button' onChange={(e) => SetPhoto(e.target.files)}></input>
-
+                        <input type="file" className='Second--Body--Second--First--Button'id='input--file' style={{display:'none'}} onChange={(e) => SetPhoto(e.target.files)}></input>
+                        <label htmlFor='input--file' className='update-btn'>ატვირთვა</label>
                     </div>
                     <div className='Second--Body--Third'>
                         <div className='Second--Body--Third--First'>
@@ -129,7 +139,11 @@ const SecondSecond = () => {
                     <div className='Second--Body--Fourth'>
                         <label htmlFor='email'>ელ.ფოსტა</label> 
                         <div >
-                            <input id="email" name="email"onChange={onChanges} value={info[0].email} className={info[0].email.length == 0 ? 'Second--Body--Fourth--Input' : info[0].emailErr ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='Redberry@redberry.ge'></input></div>
+                            <div className='relatives'>
+                                <input id="email" name="email"onChange={onChanges} value={info[0].email} className={info[0].email.length == 0 ? 'Second--Body--Fourth--Input' : info[0].emailErr ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='Redberry@redberry.ge'></input>
+                                {info[0].email.length == 0 ?<img   style={{display:"none"}} src={logo}></img>: info[0].emailErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  className='input--accept' style={{display:"block"}} src={logo}></img>}
+                                </div>
+                            </div>
                             <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა მთავრდებოდეს @redberry.ge-ით</p>
                         </div>
                     <div className='Second--Body--Fifth'>
