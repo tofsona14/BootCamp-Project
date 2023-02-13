@@ -7,16 +7,7 @@ import { minTW } from '../../schemas/schemas'
 import Cv from '../../CV/Cv'
 
 const SecondSecond = () => {
-    const { values, errors, handleChange, handleSubmit} = useFormik({
-        initialValues: {
-            name: "",
-            surname: "",
-            email: "",
-            phone: "",
-            
-        },
-        validationSchema: secondSchema,
-    })
+    
     const Validations = (info) => {
         setInfo((prev) => {
             let s = [...prev]
@@ -147,7 +138,7 @@ const SecondSecond = () => {
                         <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                     <div className='Second--Body--Sixth'>
-                        <Link to="/Experience"><button className='Second--Body--Fifth--Button'>შემდეგი</button></Link>
+                        {info[0].name != "" && info[0].surname != "" && info[0].email != "" && info[0].phone != "" && info[0].nameErr != "required" && info[0].surnameErr != "required" && info[0].emailErr != "required" && info[0].phoneErr != "required" ? <Link to="/Experience"><button className='Second--Body--Fifth--Button'>შემდეგი</button></Link> : <button className='Second--Body--Fifth--Button'>შემდეგი</button> }
                     </div>
                 </div>
         </div>

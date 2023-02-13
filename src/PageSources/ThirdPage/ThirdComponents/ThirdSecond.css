@@ -16,7 +16,20 @@
     height: 4vh;
     margin-top: 1vh;
     outline: none;
-}.Third--Body--First--Input--accepted {
+}
+.Third--Body--First--Input:focus {
+    border: 2px solid #BCBCBC;
+
+}
+.Third--Body--First--Input--accepted:focus {
+    border: 2px solid  #98E37E;;
+
+}
+.Third--Body--First--Input--declined:focus {
+    border: 2px solid  #EF5050;;
+    
+}
+.Third--Body--First--Input--accepted {
     margin: 0.25vw;
     width: 46.5vw;
     height: 4vh;

@@ -25,7 +25,6 @@ const Cv = () => {
         }
         }, 400)
     }, [])
-    console.log(third)
     return(
         first.map((e, i) => (
             <div>
@@ -78,10 +77,10 @@ const Cv = () => {
                                     <div>
                                         <p className='p--map--rd'>{`- ${i.endTime}`}</p>
                                     </div>
-                                ): console.log('s') }
+                                ): '' }
                                 {i.otherD != "" ? (
                                     <div><p className='descriptions'>{i.otherD}</p></div>
-                                ): console.log('otherD')}
+                                ): ''}
                             </div>
                             
                         )
@@ -92,7 +91,7 @@ const Cv = () => {
                     
                 })}
             </div>
-            {third[0].college != "" || third[0].dropDown !="" || third[0].endDate != "" || third[0].description != "" ? (<div className='Gamocdileba'>განათლება</div>) : console.log("s")}
+            {third[0].college != "" || third[0].dropDown !="" || third[0].endDate != "" || third[0].description != "" ? (<div className='Gamocdileba'>განათლება</div>) : ''}
             
                 {third.map((o, l) => {
                     if(o.college[0] != "") {

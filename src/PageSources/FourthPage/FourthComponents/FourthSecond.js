@@ -7,7 +7,7 @@ import DropDownLogo from '../../images/Vector.png'
 import '../../DropDownMenu/DropDown.css'
 
 const FourthSecond = () => {
-
+    const [options, setOptions] = useState([]);
     const formValidation = (se) => {
         const s = [...se]
         for (let index = 0; index < s.length; index++) {
@@ -41,7 +41,6 @@ const FourthSecond = () => {
     }
     const [dropDown, setDropDown] = useState([])
     const [data, setData] = useState()
-    const [isActive, setIsActive] = useState([false])
     const [select, setSelect] = useState(['Choose'])
     const [datas, setDatas] = useState([{college: "",startDate: "", endDate: "", description: "", dropDown: ""}])
     const [sama, setSama] = useState([{
@@ -64,42 +63,27 @@ const FourthSecond = () => {
             }]
         })
         setDatas([...datas, {college: "",startDate: "", endDate: "", description: "" ,dropDown: ""}])
-        setSelect((prev) => {
-            return [...prev, "Choose"]
-        })
-        setData((prev) => {
-            return [...prev, ...data ]
-        })
-        setIsActive((prev) => {
-            return [...prev, false]
-        })
+        
+        
+        
         
     }
     const onChange = (e, i) => {
         let newForm = [...datas]
         newForm[i][e.target.name] = [e.target.value]
-        newForm[i].dropDown = dropDown[i]
         setDatas(newForm)
         formValidation(datas)
-        setDatas((prev) => {
-            let info = [...prev]
-            info[i].dropDown = select[i]
-            return info
-        })
+        
         
     }
     console.log(datas)
     const example = (e, i) => {
         
         let newForm = [...dropDown]
-        console.log(e.target.innerHTML)
-        newForm[i] = e.target.innerHTML
+        console.log(` this is ${e.target.value}`)
+        newForm[i] = e.target.value
         setDropDown(newForm)
-        setIsActive((prev) => {
-            let info = prev
-            info[i] = true
-            return info
-        })
+        
         formValidation(datas)
         
         
@@ -124,11 +108,13 @@ const FourthSecond = () => {
       },[datas]);
     
       // Get the value from local storage when the component mounts
-    useEffect(() => {
+      useEffect(() => {
         fetch("https://resume.redberryinternship.ge/api/degrees")
-        .then(response => response.json())
-        .then(data => setData([data]))
-    }, [])
+          .then(res => res.json())
+          .then(data => {
+            setOptions(data);
+          });
+      }, []);
         
     return(
         <div className='Third--Second'>
@@ -143,7 +129,7 @@ const FourthSecond = () => {
                             <label htmlFor='college'>{e.first}</label>
                             <br></br>
                             <div >
-                                <input onChange={(e) => onChange(e,i)} className={datas[i].college == "" ?'Third--Body--First--Input' : datas[i].collegeCheck || datas[i].collegeChecks ? 'Third--Body--First--Input--declined' : 'Third--Body--First--Input--accepted'} value={datas[i].college || ""} name='college' id='college' placeholder={!isActive[i-1] ?'სასწავლებელი': ""}></input>
+                                <input onChange={(e) => onChange(e,i)} className={datas[i].college == "" ?'Third--Body--First--Input' : datas[i].collegeCheck || datas[i].collegeChecks ? 'Third--Body--First--Input--declined' : 'Third--Body--First--Input--accepted'} value={datas[i].college || ""} name='college' id='college' placeholder='სასწავლებელი'></input>
                                 <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.six}</p>
                             </div>
                         </div>
@@ -151,47 +137,15 @@ const FourthSecond = () => {
                                 <div>
                                     <label>{e.second}</label>
                                     <br></br>
-                                    <div className={datas[i].dropDown == "" || datas[i].dropDown== "Choose" ? 'dropdown--declined' :  'dropdown--accepted'}>
-                    <div className='dropdown-btn' name="dropDown" id="dropDown"  onClick={e =>  example(e, i)}>{select[i]}</div>
-                    {isActive[i] && (
-                        <div className='dropdown-content'>
-                            {data[i].map((option) => (
-                                <div onClick={(e) => {
-                                    setSelect((prev) => {
-                                        let info = [...prev]
-                                        info[i] = [option.title]
-                                        
-                                        return info
-                                    })
-                                    setIsActive((prev)=> {
-                                        let info = prev
-                                        info[i] = false
-                                        return info
-                                    })
-                                    console.log(isActive)
-                                    setDatas((prev) => {
-                                        let info = [...prev]
-                                        info[i].dropDown = select[i]
-                                        return info
-                                    })
-                                    setDatas((prev) => {
-                                        let info = [...prev]
-                                        info[i].dropDown = select[i]
-                                        return info
-                                    })
-                                 
-                                 
-                                 
-
-                                }} 
-                                className="dropdown-item">
-                                    <p style={{fontSize: "10px"}} >{option.title}</p>
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                    <select className={datas[i].dropDown == "" || datas[i].dropDown[0] == "აირჩიე ხარისხი" ? 'Third--Body--First--First--Input':'Third--Body--First--First--Input--accepted'} value={datas[i].dropDown || "" } onChange={(e) => onChange(e, i)} name='dropDown' >
+                        <option>აირჩიე ხარისხი</option>
+      {options.map(option => (
+        <option  key={option.id} name="dropDown" >
+          {option.title}
+        </option>
+      ))}
+    </select>
                 </div>
-                                </div>
                                 <div className='Third--Body--First--Second'>
                                     <label htmlFor='startDate'>{e.third}</label>
                                     <div>
@@ -203,7 +157,7 @@ const FourthSecond = () => {
                                 <div className='Second--Body--Third--First'>
                                     <label htmlFor='description'>{e.fourth}</label>
                                 </div>
-                                {!isActive[i] ? <input style={{fontSize: "15px"}} onChange={(e) => onChange(e, i)}name="description" id='description' value={datas[i].description} className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>: <input style={{fontSize: "15px"}} value={datas[i].description} className='Second--Body--Third--Second'  placeholder=''></input>}
+                                <input style={{fontSize: "15px"}} onChange={(e) => onChange(e, i)}name="description" id='description' value={datas[i].description} className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>
                         </div>
                         <div className='Third--Body--Fourth'></div>
             <br></br>
