@@ -104,6 +104,7 @@ const FourthSecond = () => {
         
         
         
+        
     }
     
     
@@ -111,6 +112,7 @@ const FourthSecond = () => {
       const storedValue = localStorage.getItem("value");
       if (storedValue) {
         setDatas(JSON.parse(storedValue));
+        
       }
     }, []);
     
@@ -127,6 +129,7 @@ const FourthSecond = () => {
         .then(response => response.json())
         .then(data => setData([data]))
     }, [])
+        
     return(
         <div className='Third--Second'>
             <div className='Third--Header'>
@@ -171,6 +174,11 @@ const FourthSecond = () => {
                                         info[i].dropDown = select[i]
                                         return info
                                     })
+                                    setDatas((prev) => {
+                                        let info = [...prev]
+                                        info[i].dropDown = select[i]
+                                        return info
+                                    })
                                  
                                  
                                  
@@ -187,7 +195,7 @@ const FourthSecond = () => {
                                 <div className='Third--Body--First--Second'>
                                     <label htmlFor='startDate'>{e.third}</label>
                                     <div>
-                                    <input name="endDate" onChange={(e) => onChange(e, i)} id="endDate"type="date" className={datas[i].endDate == "" ? 'Third--Body--First--First--Input' : 'Third--Body--First--First--Input--accepted'} placeholder='მუმლაძე' minLength={2}></input>
+                                    <input name="endDate" onChange={(e) => onChange(e, i)} id="endDate"type="date" value={datas[i].endDate} className={datas[i].endDate == "" ? 'Third--Body--First--First--Input' : 'Third--Body--First--First--Input--accepted'} placeholder='მუმლაძე' minLength={2}></input>
                                     </div>
                                 </div>
                         </div>

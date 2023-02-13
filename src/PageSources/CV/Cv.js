@@ -23,7 +23,7 @@ const Cv = () => {
                 setThird(JSON.parse(l))
             
         }
-        }, 2000)
+        }, 400)
     }, [])
     console.log(third)
     return(
