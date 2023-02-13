@@ -6,6 +6,7 @@ import { useState } from 'react'
 import DropDownLogo from '../../images/Vector.png'
 import '../../DropDownMenu/DropDown.css'
 import logo from '../../images/damtanjet.png'
+import axios from 'axios'
 
 
 const FourthSecond = () => {
@@ -117,9 +118,13 @@ const FourthSecond = () => {
             setOptions(data);
           });
       }, []);
+
+      const Submit = (e) => {
+        axios.post("https://resume.redberryinternship.ge/api/cvs")
+      }
         
     return(
-        <div className='Third--Second'>
+        <form onSubmit={(e) =>Submit(e)} className='Third--Second'>
             <div className='Third--Header'>
                 <h2>განათლება</h2>
                 <h3 style={{ color:"#2E2E2E"}}>3/3</h3>
@@ -177,9 +182,9 @@ const FourthSecond = () => {
             <button onClick={addRow} className='Fourth--Body--Button'> {sama[0].fifth} </button>
                     <div className='Fouth--Body--Fifth--ChildDiv'>
                         <Link to="/Experience"><button className='Fourth--Body--Fifth--st--button'>უკან</button></Link>
-                        <Link to="/Education"><button className='Fourth--Body--Fifth--nd--button'>შემდეგი</button></Link>
+                        <Link to="/Education"><button onClick={Submit()} className='Fourth--Body--Fifth--nd--button'>შემდეგი</button></Link>
                     </div>
-        </div>
+        </form>
     )
 }
 
