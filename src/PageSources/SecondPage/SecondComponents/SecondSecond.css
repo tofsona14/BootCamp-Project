@@ -129,6 +129,7 @@ select.Second--Body--First--First--Input--accepted {
     margin-top: 1vh;
     outline: none;
     border-color: #98E37E;
+    background-color: white;
 }
 .Second--Body--Fourth--Input--accepted:focus {
     border-color:2px solid #98E37E;

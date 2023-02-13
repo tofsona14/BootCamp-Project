@@ -5,6 +5,8 @@ import DropDown from '../../DropDownMenu/DropDown'
 import { useState } from 'react'
 import DropDownLogo from '../../images/Vector.png'
 import '../../DropDownMenu/DropDown.css'
+import logo from '../../images/damtanjet.png'
+
 
 const FourthSecond = () => {
     const [options, setOptions] = useState([]);
@@ -129,7 +131,11 @@ const FourthSecond = () => {
                             <label htmlFor='college'>{e.first}</label>
                             <br></br>
                             <div >
+                                <div className='relatives'>
                                 <input onChange={(e) => onChange(e,i)} className={datas[i].college == "" ?'Third--Body--First--Input' : datas[i].collegeCheck || datas[i].collegeChecks ? 'Third--Body--First--Input--declined' : 'Third--Body--First--Input--accepted'} value={datas[i].college || ""} name='college' id='college' placeholder='სასწავლებელი'></input>
+                                {sama[i].college == "" ?<img  style={{display:"none"}} src={logo}></img>: datas[i].collegeCheck || datas[i].collegeChecks ? <img  style={{display:"none"}} src={logo}></img> : <img  style={{display:"flex"}} src={logo}></img>}
+
+                                </div>
                                 <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.six}</p>
                             </div>
                         </div>
@@ -158,6 +164,7 @@ const FourthSecond = () => {
                                     <label htmlFor='description'>{e.fourth}</label>
                                 </div>
                                 <input style={{fontSize: "15px"}} onChange={(e) => onChange(e, i)}name="description" id='description' value={datas[i].description} className='Second--Body--Third--Second'  placeholder='განათლების აღწერა'></input>
+                                
                         </div>
                         <div className='Third--Body--Fourth'></div>
             <br></br>

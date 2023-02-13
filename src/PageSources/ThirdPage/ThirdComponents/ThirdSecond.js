@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
 import { thirdSchema } from '../../schemas/schemas'
 import { useState } from 'react'
+import logo from '../../images/damtanjet.png'
+
 
 const ThirdSecond = () => {
     
@@ -120,14 +122,21 @@ return(
                     <label htmlFor='position'>{e.second}</label>
                     <br></br>
                     <div >
-                        <input    id="position" name='position' onChange={(e) => handleChange(e,i)} value={data[i].position || ""} className={data[i].position.length == 0 ? 'Third--Body--First--Input':  data[i].positionErr != "" ? "Third--Body--First--Input--declined" : "Third--Body--First--Input--accepted"} placeholder='დეველოპერი, დიზაინერი და ა.შ'></input>
+                        <div className='relatives'>
+                            <input    id="position" name='position' onChange={(e) => handleChange(e,i)} value={data[i].position || ""} className={data[i].position.length == 0 ? 'Third--Body--First--Input':  data[i].positionErr != "" ? "Third--Body--First--Input--declined" : "Third--Body--First--Input--accepted"} placeholder='დეველოპერი, დიზაინერი და ა.შ'></input>
+                            {data[i].position.length == 0 ?<img  style={{display:"none"}} src={logo}></img>: data[i].positionErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  style={{display:"flex"}} src={logo}></img>}
+                        </div>
                         <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.eight}</p>
                     </div>
                 </div>
                 <div className='Third--Second--Body--Second'>
                     <label htmlFor='employer'>{e.third}</label>
                     <div >
+                        <div className='relatives'>
                         <input  id="employer" name='employer' onChange={(e) => handleChange(e,i)} value={data[i].employer || ""} className={data[i].employer.length == 0 ?'Third--Body--First--Input': data[i].employerErr != "" ? "Third--Body--First--Input--declined" : "Third--Body--First--Input--accepted" } placeholder='დამსაქმებელი'></input>
+                        {data[i].employer.length == 0 ?<img  style={{display:"none"}} src={logo}></img>: data[i].employerErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  style={{display:"flex"}} src={logo}></img>}
+
+                        </div>
                         <p className="Third--Body--First--First-P" style={{color:"#2E2E2E"}} >{e.eight}</p>
                     </div>
                 </div>

@@ -148,7 +148,10 @@ const SecondSecond = () => {
                         </div>
                     <div className='Second--Body--Fifth'>
                         <label htmlFor='phone'>მობილურის ნომერი</label>
-                        <div ><input id="phone" type="text" name="phone"value={info[0].phone} onChange={onChanges} className={info[0].phone.length == 0 ? 'Second--Body--Fourth--Input' : info[0].phoneErr ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='+995 551 12 34 56'></input></div>
+                        <div className='relatives'>
+                            <input id="phone" type="text" name="phone"value={info[0].phone} onChange={onChanges} className={info[0].phone.length == 0 ? 'Second--Body--Fourth--Input' : info[0].phoneErr ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='+995 551 12 34 56'></input>
+                            {info[0].phone.length == 0 ?<img   style={{display:"none"}} src={logo}></img>: info[0].phoneErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  className='input--accept' style={{display:"block"}} src={logo}></img>}
+                        </div>
                         <p className="Second--Body--First--First-P" style={{color:"#2E2E2E"}} >უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                     <div className='Second--Body--Sixth'>
