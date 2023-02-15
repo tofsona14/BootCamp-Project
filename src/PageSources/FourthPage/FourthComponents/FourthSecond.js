@@ -217,7 +217,7 @@ const FourthSecond = () => {
                 i.experiences = experience
                 return i
             })
-            axios.post('/your/api/endpoint', JSON.stringify(full))
+            axios.post('https://resume.redberryinternship.ge/api/cvs"', JSON.stringify(full))
   .then(response => {
     console.log(response) 
   })
