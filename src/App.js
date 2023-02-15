@@ -1,5 +1,5 @@
 import './App.css';
-import MainFull from './PageSources/MainPage/MainFull/MainFull';
+import MainFull from './PageSources/MainPage/MainFull/mainFull';
 import {Routes, Route} from 'react-router-dom'
 import SecondFull from './PageSources/SecondPage/SecondFull/SecondFull';
 import ThirdFirst from './PageSources/ThirdPage/ThirdComponents/ThirdFirst';

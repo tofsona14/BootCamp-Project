@@ -37,8 +37,7 @@ const SecondSecond = () => {
         
         
     }
-    const [info,setInfo] = useState([{name: "", surname: "", about: "", email: "", phone: "",nameErr: "", surnameErr: 
-    "", emailErr: "", phoneErr: ""}])
+    const [info,setInfo] = useState([{name: "", surname: "", about: "", email: "", phone: ""}])
     const onChanges = (e) => {
         setInfo(prev => {
             let info = prev
@@ -140,7 +139,7 @@ const SecondSecond = () => {
                         <label htmlFor='email'>ელ.ფოსტა</label> 
                         <div >
                             <div className='relatives'>
-                                <input id="email" name="email"onChange={onChanges} value={info[0].email} className={info[0].email.length == 0 ? 'Second--Body--Fourth--Input' : info[0].emailErr ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='Redberry@redberry.ge'></input>
+                                <input id="email" type="email" name="email"onChange={onChanges} value={info[0].email} className={info[0].email.length == 0 ? 'Second--Body--Fourth--Input' : info[0].emailErr ? "Second--Body--Fourth--Input--declined" : "Second--Body--Fourth--Input--accepted"} placeholder='Redberry@redberry.ge'></input>
                                 {info[0].email.length == 0 ?<img   style={{display:"none"}} src={logo}></img>: info[0].emailErr != "" ? <img  style={{display:"none"}} src={logo}></img> : <img  className='input--accept' style={{display:"block"}} src={logo}></img>}
                                 </div>
                             </div>

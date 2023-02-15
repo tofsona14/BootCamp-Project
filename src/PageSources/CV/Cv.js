@@ -71,7 +71,7 @@ const Cv = () => {
                                 </div>
                                 {i.startTime != "" ? (
                                     <div>
-                                        <p className='p--map--rd'>{`${i.startTime} - ${i.endTime}`}</p>
+                                        <p className='p--map--rd'>{`${i.start_time} - ${i.due_time}`}</p>
                                     </div>
                                 ): i.endTime != "" ? (
                                     <div>
@@ -106,7 +106,7 @@ const Cv = () => {
                                 <div><p className='descriptions'>{o.description}</p></div>
                             </div>
                         )
-                    }else if(o.dropDown[0] != "") {
+                    }else if(o.dropDown != "") {
                         return(
                         <div>
                             <div className='second--map--employer'><p className='p--map--nd'>{`${o.dropDown}`}</p></div>
