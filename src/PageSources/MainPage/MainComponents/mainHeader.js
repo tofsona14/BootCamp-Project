@@ -12,7 +12,7 @@ const MainHeader = () => {
         let p = window.localStorage.getItem('full')
         
         if(!a) {
-            window.localStorage.setItem('val-2', JSON.stringify([{position: "",employer: "",startTime: "",endTime: "",otherD: ""}]))
+            window.localStorage.setItem('val-2', JSON.stringify([{position: "",employer: "",start_time: "",due_time: "",description: ""}]))
         }
         if(!b) {
             window.localStorage.setItem('value', JSON.stringify([{college: "",startDate: "", endDate: "", description: "", dropDown: "",collegeChecks: "",collegeCheck: "",dropDownChecks: "",dropDownCheck: "", endDateCheck: ""}]))
@@ -25,7 +25,7 @@ const MainHeader = () => {
             "", emailErr: "", phoneErr: ""}]))
         }
         if(!o) {
-            window.localStorage.setItem('infos', JSON.stringify({position: "", employer:"",start_date:"",due_date:"",description:""}))
+            window.localStorage.setItem('infos', JSON.stringify([{position: "", employer:"",start_date:"",due_date:"",description:""}]))
 
         }
         if(!p) {

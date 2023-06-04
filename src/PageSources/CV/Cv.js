@@ -16,6 +16,7 @@ const Cv = () => {
             let s = window.localStorage.getItem("first-val")
             let o = window.localStorage.getItem("val-2")
             let l = window.localStorage.getItem("value")
+           
             if(s) {
                 setFirst(JSON.parse(s))
                 setSecond(JSON.parse(o))
@@ -79,7 +80,7 @@ const Cv = () => {
                                     </div>
                                 ): '' }
                                 {i.otherD != "" ? (
-                                    <div><p className='descriptions'>{i.otherD}</p></div>
+                                    <div><p className='descriptions'>{i.description}</p></div>
                                 ): ''}
                             </div>
                             

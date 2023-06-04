@@ -153,6 +153,7 @@ const ThirdSecond = () => {
         if(secondVal) {
             setData(JSON.parse(secondVal))
         }
+        
 },[])
     useEffect(() => {
         
